@@ -1,0 +1,52 @@
+/* フォントを指定するクラス */
+body.mceContentBody {
+    font-size: 18px;
+    font-family: 'Meiryo UI', sans-serif;
+    padding: 20px !important;
+}
+
+body.editor-area {
+    color: #333;
+}
+
+body.editor-area p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 3em;
+}
+
+body.editor-area h2 {
+    margin: 20px 0;
+    border-left: 5px solid dodgerblue;
+    padding-left: 20px;
+    line-height: 2.0;
+}
+
+.editor-area h3 {
+    margin: 20px  0 20px;
+    border-left: 3px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: whitesmoke;
+    padding-left:20px;
+    line-height: 2;
+}
+
+.editor-area blockquote {
+    background-color: #ddd;
+    padding: 1em 1em 1em 1em;
+    margin-bottom:3em;
+    position: relative;
+    border-left: 3px solid #333;
+}
+
+
+.editor-area blockquote:before {
+    content:"“";
+    font-size: 600%;
+    line-height: 1em;
+    font-family: "MS Pゴシック", sans-serif;
+    color: #999;
+    position:absolute;
+    left: 0;
+    top: 0;
+}

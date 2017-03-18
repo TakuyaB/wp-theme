@@ -1,0 +1,943 @@
+@charset "UTF-8";
+
+/*
+Theme Name: original1.83
+Author: Takuya.B
+Description: for me.
+Version: 1.83
+
+*/
+
+
+/* -------------------------------------
+ *
+ * sec.general(共通設定の綺麗な書き方を調べておく！）
+ *
+ ------------------------------------- */
+
+* {
+    font-family: "Meiryo UI", sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+p {
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:dodgerblue;
+    text-decoration: underline;
+}
+
+
+/* -------------------------------------
+ *
+ * sec.general-placement
+ *
+ ------------------------------------- */
+
+#container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#contents {
+    width: 1400px;
+    margin: auto;
+    overflow: hidden;
+    background-color: white;
+    /*border-top:  1px solid silver;  !* contentsより上にお知らせなどの要素がある場合 *!*/
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+}
+
+#header {
+    width: 100%;
+    background-color: white;
+}
+
+#main {
+    height: 100%;
+    width: 69%;
+    float: left;
+}
+
+#sidebar {
+    height: 100%;
+    width: 30%;
+    float: right;
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    background-color: #333;
+    color: white;
+    clear: both;
+}
+
+
+
+/* -------------------------------------
+ *
+ * sec.header
+ *
+ ------------------------------------- */
+
+#header h1.title-logo{
+    background-color: white;
+    margin-top: 0;
+    padding-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 0;
+    height: 50px;
+}
+
+#header h1.title-logo a {
+    color: #333;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+#header h1.title-logo a:hover {
+    color: dodgerblue;
+}
+
+#header p.description {
+    font-size: 12px;
+    height: 25px;
+    margin: 0 0 20px 50px;
+}
+
+
+/*---------------
+ * subsec.nav
+ ---------------*/
+
+.bgc {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+nav {
+    width: 1400px;
+    margin: 0 auto 40px;
+    padding: 0;
+    font-size: 98%;
+}
+
+ul#menu {
+    position: relative;
+    height: 40px;
+    margin: 0;
+    padding: 0 40px;
+    background-color: white;
+    text-align: center;
+}
+
+ul#menu li {
+    min-width: 100px;
+    float: left;
+    list-style-type: none;
+}
+
+
+ul#menu li a {
+    background-color: white;
+    color: #333;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+}
+
+ul#menu li a:hover {
+    color: #333;
+    background-color: whitesmoke;
+}
+
+ul#menu li ul {
+    display: none;
+    position: absolute;
+}
+
+ul#menu li ul li {
+    float: none;
+}
+
+ul#menu li:hover ul{
+    display: block;
+    margin-left: 0;
+}
+
+/* -------------------------------------
+ *
+ * sec.footer
+ *
+ ------------------------------------- */
+
+#footer{
+    background-color: #333;
+    bottom: 0;
+    clear:both;
+    color: white;
+    width: 100%;
+}
+
+#footer p{
+    color: white;
+    font-size: 14px;
+    line-height: 3;
+    text-align: center;
+}
+
+
+
+
+/*-------------------------------------
+ *
+ * sec.main
+ *
+ ------------------------------------- */
+
+#main .post {
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid silver;
+}
+
+/*これ不要かも（要確認）*/
+#main .page {
+    margin: 0;
+    padding: 20px;
+}
+
+
+
+/*------------------
+ * subsec.pankuzu
+ -------------------*/
+
+#breadcrumb ul {
+    width: 100%;
+    margin: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+#breadcrumb ul li {
+    /*position: relative;*/
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#breadcrumb ul a {
+    float: left;
+}
+
+
+
+/*---------------
+ * subsec.post
+ ---------------*/
+
+.post-thumbnail {
+    width: 30%;
+    min-width: 250px;
+    float: left;
+    margin: 0 20px 5px 0;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    min-width: 250px;
+}
+
+.post-context {
+    width: 65%;
+    min-width: 300px;
+    float: right;
+}
+
+.post-context h1.post-title {
+    width: 100%;
+    min-width: 300px;
+    border-bottom: 2px solid silver;
+    padding-bottom: 10px;
+    line-height: 1;
+}
+
+.post-context h1.post-title a {
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.post-context h1.post-title a:hover {
+    text-decoration: underline;
+}
+
+.post-float-clear {
+    clear: both;
+}
+
+
+/*-------------------
+ * subsec.top-pager
+ -------------------*/
+/* ページャー */
+.top-pager{
+    margin: 20px 0 ;
+    text-align:center}
+
+a.page-numbers,
+.top-pager .current{
+    background-color: #edede3;
+    border: solid 1px #aaaaaa;
+    border-radius:5px;
+    padding:5px 8px;
+    margin:0 2px;}
+
+.top-pager .current{
+    background-color: #000000;
+    border: solid 1px #000000;
+    color: #ffffff;}
+
+.top-pager a:hover{
+    color: #ffffff;
+    border: solid 1px #000000;
+    background-color: #000000;}
+
+/*----------------------
+ * subsec.category-page（未編集）
+ -----------------------*/
+
+.archive-title {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    color: whitesmoke;
+    background-color: #333;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.archive-title i {
+    color: whitesmoke;
+}
+
+
+/* -------------------------------------
+ *
+ * sec.single-post&page(投稿記事&固定ページ)
+ *
+ ------------------------------------- */
+
+.single-post h1.post-title,
+.single-page h1.post-title {
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 28px;
+    line-height: 1.5;
+    background-color: white;
+    border-bottom: 2px solid silver;
+}
+
+.single-post h1.post-title a,
+.single-page h1.post-title a {
+    color: #333;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+/*----------------------------
+ * subsec.H1-6 & p のfont-size
+ #mainを追加しないと、デザインが反映されない
+ body要素のclassに.single-postが付いているからかもしれない
+ →念のため#mainタグを付けて対応
+ -----------------------------*/
+
+#main .single-post h2 {
+    margin: 20px 0 20px 0;
+    padding-left: 20px;
+    background-color: dodgerblue;
+    border-radius: 5px;
+    color: white;
+    line-height: 2;
+}
+/* テスト↓ */
+/*#main .single-post h2 {*/
+    /*color: #333 !important;*/
+    /*margin: 20px 0 20px 0;*/
+    /*padding-left: 20px;*/
+    /*border-top: 2px solid #333 !important;*/
+    /*border-bottom: 2px solid #333 !important;*/
+    /*line-height: 2;*/
+/*}*/
+
+#main .single-post h3 {
+    font-size: 20px;
+    margin: 20px 0;
+    padding-left: 20px;
+    background-color: whitesmoke;
+    border-left: 3px solid gray;
+    border-bottom: 1px solid gray;
+    line-height: 2;
+}
+
+#main .single-post p {
+    font-size: 18px;
+    line-height: 1.7em;
+    margin-bottom: 3em;
+}
+
+.single-post a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.single-post a:hover {
+    color: dodgerblue;
+    text-decoration: underline;
+}
+
+
+/*----------------------------
+ * subsec.image
+ -----------------------------*/
+
+.single-post img, .single-page img {
+    border: 1px solid silver;
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption .wp-caption-text,
+.wp-caption .wp-caption-text a {
+    font-style: italic;
+    font-size: 14px !important;  /* フォントサイズはどこかで干渉しているのかも */
+}
+
+
+
+/*----------------------------
+ * subsec.list(記事内のul&ol)（未編集）
+ -----------------------------*/
+
+.single-post ol, .single-post ul,
+.single-page ol, .single-page ul {
+    margin-left: 30px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+
+/*----------------------------
+ * subsec.引用(未編集)
+ -----------------------------*/
+
+#main blockquote {
+    background-color: #ddd;
+    padding: 1em 1em 1em 3em;
+    position: relative;
+    border-left: 3px solid #333;
+}
+
+#main blockquote:before {
+    content:"“";
+    font-size: 600%;
+    line-height: 1em;
+    font-family: "MS Pゴシック", sans-serif;
+    color: #999;
+    position:absolute;
+    left: 0;
+    top: 0;
+}
+
+
+
+/*----------------------------
+ * subsec.under-related-posts(未編集）
+ -----------------------------*/
+.related-entries {
+    width: 100%;
+    height: auto;
+}
+.related-entries h3.related-entries-title {
+    display: inline-block;
+    background-color: #333;
+    border-bottom: 1px solid #333;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: normal !important;
+    line-height: 2;
+    margin-top: 20px;
+    padding: 5px 10px;
+    /*width: 300px;*/
+}
+
+.related-entries .related-entries-title-wrapper {
+    width: 100% ;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333 ;
+}
+
+.related-entry {
+    width: 100%;
+    height: 230px;
+    border-bottom: 1px solid silver;
+}
+
+.related-entry-thumb {
+    position: relative;
+    width:30%;
+    min-width: 110px;
+    margin:10px;
+    float: left;
+}
+
+.related-entry-content {
+    width: 65%;
+    min-width: 235px;
+    float: right;
+}
+
+.related-entry-content h4 {
+    margin-top: 20px;
+}
+
+
+
+
+/*--------------------------
+ * subsec.single-post-pager(未編集）
+ ---------------------------*/
+
+
+
+
+/* -------------------------------------
+ *
+ * sec.sidebar
+ *
+ ------------------------------------- */
+
+#sidebar ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar .widget {
+    margin: 20px;
+}
+
+#sidebar .widget h2.widgettitle {
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    border-bottom: 2px solid gold;
+    font-size:24px;
+    color: #333;
+}
+
+#sidebar .widget li a {
+    display: block;
+    margin-left: 30px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+#sidebar .widget li a:hover {
+    background-color: whitesmoke;
+    text-decoration: underline;
+    color: dodgerblue;
+}
+
+
+
+
+/*----------------------------
+ * subsec.side-profile
+ -----------------------------*/
+.side-profile p {
+    font-size: 14px;
+}
+
+div.go-to-profile {
+    font-size:18px;
+    border: 2px solid #333;
+    line-height: 2;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+div.go-to-profile a {
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+div.go-to-profile a:hover {
+    text-decoration: none;
+    background-color: whitesmoke;
+}
+
+
+/* Twitter リンク */
+div.go-to-twitter {
+    font-size: 18px;
+    background-color: #55acee;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div.go-to-twitter a {
+    display: block;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+div.go-to-twitter a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+/* FaceBookページ リンク */
+div.go-to-fbpage {
+    font-size: 18px;
+    background-color: #315096;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div.go-to-fbpage a {
+    display: block;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+div.go-to-fbpage a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+
+/* note リンク */
+div.go-to-note {
+    font-size: 18px;
+    background-color: #2dcdb5;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div.go-to-note a {
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+
+div.go-to-note a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+
+/* amazon欲しいものリスト リンク */
+div.amazon-want {
+    font-size: 18px;
+    background-color: #ff9900;
+    line-height: 2;
+    text-align: center;
+}
+
+div.amazon-want a {
+    display: block;
+    font-weight: bold;
+    color: #404040;
+}
+
+div.amazon-want a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+
+/* -------------------------------------
+ *
+ * sec.adsense（未編集）
+ *
+ ------------------------------------- */
+
+/*サイドバーのアドセンスの調整？（要確認！） */
+.adsbygoogle {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+
+/*記事内 広告中央寄せ??（要確認！）*/
+.ad_center {
+    margin: 40px auto 20px;
+    text-align: center;
+}
+
+/*アーカイブページのループ中に表示する横長アドセンス*/
+.toppage-adsense {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+/* -------------------------------------
+ *
+ * sec.kaereba&yomereba(未編集)
+ *
+ ------------------------------------- */
+
+.booklink-box,
+.kaerebalink-box {
+    border: 1px solid silver;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.booklink-info .booklink-name p,
+.kaerebalink-info .kaerebalink-name p {
+    margin-bottom: 0 !important;
+    padding-bottom: 5px;
+    border-bottom: 2px solid silver;
+}
+
+.booklink-info .booklink-name p a,
+.kaerebalink-info .kaerebalink-name p a {
+    font-size: 24px;
+}
+
+.booklink-info .booklink-name .booklink-powered-date,
+.kaerebalink-info .kaerebalink-name .kaerebalink-powered-date {
+    font-size: 14px !important;
+}
+
+.booklink-info .booklink-name .booklink-powered-date a,
+.kaerebalink-info .kaerebalink-name .kaerebalink-powered-date a{
+    font-size: 14px !important;
+}
+
+.booklink-detail,
+.kaerebalink-detail{
+    font-size: 16px !important;
+}
+
+
+
+/* Amazon */
+.shoplinkamazon {
+    width: 200px;
+    display: inline-block   !important;
+    background-color: #ff9900 !important;
+    padding: 5px;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shoplinkamazon a{
+    font-size: 20px !important;
+    color: white !important;
+}
+
+/* Kindle(Amazon) */
+.shoplinkkindle {
+    width: 200px;
+    display: inline-block !important;
+    background-color: #333;
+    padding: 5px;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.shoplinkkindle a {
+    font-size: 20px; !important;
+    color: whitesmoke;
+}
+
+/* 楽天 */
+.shoplinkrakuten {
+    width: 200px;
+    display: inline-block !important;
+    background-color: #bf0000;
+    padding: 5px;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.shoplinkrakuten a {
+    font-size: 20px; !important;
+    color: whitesmoke;
+}
+
+
+
+/* -------------------------------------
+ *
+ * sec.Responsive-Design
+ *
+ ------------------------------------- */
+@media (max-width: 1400px) {
+
+    body, html {
+        width: 100%;
+        height: 100%;
+    }
+
+    #contents {
+        width: 90%;
+        min-width: 1000px;
+    }
+
+    .bgc {
+        max-width: 100%;
+        min-height: 40px !important;
+    }
+
+    nav {
+        margin-bottom: 40px !important;
+        max-width: 98%;
+        font-size: 10px;
+    }
+
+    ul#menu {
+        max-width: 100% !important;
+        margin: auto !important;
+    }
+
+    nav ul#menu li {
+        min-width: 100px;
+    }
+
+    nav li a {
+        color: #333 !important;
+    }
+
+
+
+} /*レスポンシブ終了*/
+
+/* -------------------------------------
+ *
+ * 臨時：随時各secに記述
+ *
+ ------------------------------------- */
+
+.news {
+    width: 1400px;
+    max-width: 90%;
+    margin: 20px auto 20px;
+    border: 1px solid silver;
+    background-color: white;
+}
+
+/************************************
+** ブログカードのスタイル
+************************************/
+.blog-card{
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #333;
+    word-wrap:break-word;
+    max-width:90% !important;
+    border-radius:5px;
+}
+
+.blog-card-thumbnail{
+    float:left;
+}
+
+.blog-card-content{
+    margin-left:110px;
+    line-height:120%;
+}
+.blog-card-title{
+    margin-bottom:5px;
+}
+
+.blog-card-title a{
+    font-weight:bold;
+    text-decoration:none;
+    color:#111;
+}
+
+.blog-card-excerpt{
+    color:#333;
+    font-size:90%;
+}
+
+.blog-card-footer{
+    font-size:70%;
+    color:#777;
+    margin-top:5px;
+}
+
+.clear{
+    clear:both;
+}
+
+
+
+

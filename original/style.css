@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
-Theme Name: original1.83
+Theme Name: original1.84
 Author: Takuya.B
 Description: for me.
 Version: 1.84
@@ -555,10 +555,36 @@ a.page-numbers,
 
 
 /*--------------------------
- * subsec.single-post-pager(未編集）
+ * subsec.post-under-profile(未編集）
  ---------------------------*/
 
+.post-under-profile {
+    width: 100%;
+    border: 1px solid silver;
+}
 
+.pup-header {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.pup-left {
+    width: 20%;
+    /*max-width: 175px;*/
+    float: left;
+}
+
+.pup-right {
+    width: 80%;
+    float: right;
+}
+
+.pup-right .pup-content p {
+    font-size: 14px !important;
+}
 
 
 /* -------------------------------------

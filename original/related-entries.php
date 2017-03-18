@@ -20,7 +20,7 @@
         <div class="related-entry-thumb">
             <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
                 <?php if( has_post_thumbnail() ): //サムネイルを持っているとき ?>
-                    <?php echo get_the_post_thumbnail($post->ID, 'thumb100'); //サムネイルを呼び出す ?>
+                    <?php echo get_the_post_thumbnail($post->ID, 'thumb200'); //サムネイルを呼び出す ?>
                 <?php else: //サムネイルを持っていないとき ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="NO IMAGE" title="NO IMAGE" width="200px" />
                 <?php endif; ?>

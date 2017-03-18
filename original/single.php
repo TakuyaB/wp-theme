@@ -31,6 +31,29 @@
             </div>
             <?php the_content(); ?>
             <!-- 記事下に入れたいお知らせやオススメ記事のdivはここ-->
+            <div class="post-under-profile">
+                <div class="pup-header">
+                    著者プロフィール
+                </div>
+                <div class="pup-main">
+                    <div class="pup-left">
+                        <img class="aligncenter size-full wp-image-148" src="http://takuyab.com/wp-content/uploads/2015/05/me-e1434187830461.jpg" alt="me" width="150" height="150" />
+                    </div>
+                    <div class="pup-right">
+                        <div class="pup-title">
+                            <a href="http://takuyab.com/%E8%91%97%E8%80%85%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB-4" target="_blank">Takuya.B</a>
+                        </div>
+                        <div class="pup-content">
+                            <p>
+                                Takuya.B。1992年生まれ、徳島県出身。理系大学院生（博士課程)。
+                                現在は大学で研究を行いながら、ブロガー、システムエンジニアとしても活動中。
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
             <!-- single-pager -->
             <!-- single-pagerここまで -->
         </div><!-- postここまで -->

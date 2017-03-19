@@ -5,6 +5,7 @@
 <!--</div>-->
 <div id="contents">
     <div id="main">
+        <?php get_template_part('breadcrumb'); ?>
         <?php if(have_posts()): while(have_posts()): the_post(); ?>
         <div <?php post_class( 'single-post' ); ?>>
             <h1 class="post-title">

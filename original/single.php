@@ -5,6 +5,7 @@
 <!--    </div>-->
 <div id="contents">
     <div id="main">
+        <?php get_template_part('breadcrumb'); ?>
         <?php if(have_posts()): while(have_posts()): the_post(); ?><!--記事がある場合-->
         <div <?php post_class( 'single-post' ); ?>>
             <h1 class="post-title">
@@ -55,6 +56,15 @@
                 </div>
             </div>
             <!-- single-pager -->
+            <div class="single-pager">
+                <div class="prev-link">
+                    <a href="#">PREV</a>
+                </div>
+                <div class="next-link">
+                    <a href="#">NEXT</a>
+                </div>
+                <div class="clear"></div>
+            </div>
             <!-- single-pagerここまで -->
         </div><!-- postここまで -->
         <?php endwhile; else: ?><!-- 記事がない場合 -->
@@ -68,7 +78,7 @@
             <div class="related-entries-title-wrapper">
                 <h3 class="related-entries-title">こちらの記事もどうぞ！</h3>
             </div>
-            <?php include( TEMPLATEPATH . '/related-entries.php' ); ?>
+            <?php get_template_part('related-entries'); ?>
         </div><!-- 記事下関連記事ここまで -->
     </div><!-- mainここまで -->
     <?php get_sidebar(); ?>

@@ -259,15 +259,18 @@ ul#menu li:hover ul{
 #breadcrumb {
     width: 100%;
     max-width: 1400px;
-    margin-bottom: 50px;
+    margin: 20px;
 }
 
-#breadcrumb li {
+#breadcrumb ul li {
+    display: inline;
+    list-style-type: none;
+    width: 100%;
     font-size: 12px;
     margin-right: 5px;
 }
 
-#breadcrumb li a {
+#breadcrumb ul li a {
     font-size: 12px;
 }
 

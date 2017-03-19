@@ -9,6 +9,8 @@ Version: 1.84
 */
 
 
+
+
 /* -------------------------------------
  *
  * sec.general(共通設定の綺麗な書き方を調べておく！）
@@ -250,28 +252,23 @@ ul#menu li:hover ul{
 
 
 
-/*------------------
- * subsec.pankuzu
- -------------------*/
+/*---------------------
+ * subsec.パンくずリスト
+ ----------------------*/
 
-#breadcrumb ul {
+#breadcrumb {
     width: 100%;
-    margin: 20px;
-    font-size: 14px;
-    text-align: center;
+    max-width: 1400px;
+    margin-bottom: 50px;
 }
 
-
-
-#breadcrumb ul li {
-    /*position: relative;*/
-    float: left;
-    display: inline-block;
-    vertical-align: top;
+#breadcrumb li {
+    font-size: 12px;
+    margin-right: 5px;
 }
 
-#breadcrumb ul a {
-    float: left;
+#breadcrumb li a {
+    font-size: 12px;
 }
 
 
@@ -585,6 +582,28 @@ a.page-numbers,
 .pup-right .pup-content p {
     font-size: 14px !important;
 }
+
+
+/*--------------------------
+ * subsec.single-pager(未編集）
+ ---------------------------*/
+
+.single-pager {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.single-pager .prev-link {
+    width: 200px;
+    float: left;
+}
+
+.single-pager .next-link {
+    width: 200px;
+    float: right;
+    text-align: right;
+}
+
 
 
 /* -------------------------------------

@@ -104,3 +104,30 @@ add_action('draft_to_publish', 'set_title_publicize');
 add_action('new_to_publish', 'set_title_publicize');
 add_action('pending_to_publish', 'set_title_publicize');
 add_action('future_to_publish', 'set_title_publicize');
+
+
+//記事内関連記事
+function kanren($atts) {
+    extract(shortcode_atts(array("url" => 'http://'), $atts));
+    $title = getPageTitle($url);
+    return '<div class="kanren-header">関連記事</div><div class="kanren"><a href="'.$url.'"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
+}
+
+function osusume($atts) {
+    extract(shortcode_atts(array("url" => 'http://'), $atts));
+    $title = getPageTitle($url);
+    return '<div class="kanren-header">オススメ！</div><div class="kanren"><a href="'.$url.'"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
+}
+
+add_shortcode("kanren", "kanren");
+add_shortcode("osusume", "osusume");
+
+function getPageTitle( $url ) {
+    $html = file_get_contents($url); //(1)
+    $html = mb_convert_encoding($html, mb_internal_encoding(), "auto" ); //(2)
+    if ( preg_match( "/<title>(.*?)<\/title>/i", $html, $matches) ) { //(3)
+        return $matches[1];
+    } else {
+        return false;
+    }
+}

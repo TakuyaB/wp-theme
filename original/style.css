@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 /*
-Theme Name: original1.84
+Theme Name: original1.85
 Author: Takuya.B
 Description: for me.
-Version: 1.84
+Version: 1.85
 
 */
 
@@ -180,6 +180,7 @@ nav {
     font-size: 98%;
 }
 
+
 ul#menu {
     position: relative;
     height: 40px;
@@ -197,10 +198,10 @@ ul#menu li {
 
 
 ul#menu li a {
-    background-color: white;
+    padding: 0 10px;
     color: #333;
     display: block;
-    font-size: 16px;
+    font-size: 90%;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
@@ -217,14 +218,27 @@ ul#menu li ul {
 }
 
 ul#menu li ul li {
+    border-top: 1px solid silver;
     float: none;
+    background: white;
+    width: 220px;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
 }
 
+ul#menu li ul li a {
+    font-size: 80%;
+    text-align: left;
+    padding-left: 10px;
+}
 ul#menu li:hover ul{
     display: block;
     margin-left: 0;
 }
 
+.sub_last {
+    border-bottom: 1px solid silver;
+}
 /* -------------------------------------
  *
  * sec.footer
@@ -488,6 +502,7 @@ a.page-numbers,
     margin-left: 30px;
     font-size: 18px;
     line-height: 1.8;
+    margin-bottom: 54px;
 }
 
 
@@ -501,6 +516,7 @@ a.page-numbers,
     padding: 1em 1em 1em 3em;
     position: relative;
     border-left: 3px solid #333;
+    margin-bottom: 54px;
 }
 
 #main blockquote:before {
@@ -513,7 +529,6 @@ a.page-numbers,
     left: 0;
     top: 0;
 }
-
 
 
 /*----------------------------
@@ -813,7 +828,7 @@ div.amazon-want a:hover {
 .kaerebalink-box {
     border: 1px solid silver;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 54px;
 }
 
 .booklink-info .booklink-name p,
@@ -902,7 +917,7 @@ div.amazon-want a:hover {
  * sec.Responsive-Design (Mac book Air ...etc)
  *
  -------------------------------------------------*/
-@media (max-width: 1400px) {
+@media (min-width: 501px) and (max-width: 1400px) {
 
     body, html {
         width: 100%;
@@ -944,12 +959,39 @@ div.amazon-want a:hover {
 
 /* -----------------------------------------------
  *
- * sec.Responsive-Design (Mac book Air ...etc)
+ * sec.Responsive-Design (スマホ)
  *
  -------------------------------------------------*/
-/*@media (max-width: 500px) {*/
-    /**/
-/*}*/
+@media (max-width: 500px) {
+    #header {
+        width: 100% !important;
+    }
+
+    #container {
+        width: 100% !important;
+    }
+
+    #contents {
+        width: 100% !important;
+    }
+
+    #main, #sidebar {
+        float: none !important;
+        width: 100%;
+    }
+
+    h2 {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    h3 {
+        border-top: 2px solid silver;
+        border-bottom: 2px solid silver;
+        color: #333;
+    }
+}
+
 
     /* -------------------------------------
      *

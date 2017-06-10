@@ -105,29 +105,60 @@ add_action('new_to_publish', 'set_title_publicize');
 add_action('pending_to_publish', 'set_title_publicize');
 add_action('future_to_publish', 'set_title_publicize');
 
+//グローバルメニューにサブタイトルを付けるための記述
+add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
+function description_in_nav_menu($item_output, $item){
+    return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br /><span>{$item->attr_title}</span><", $item_output);
+}
+//自サイトのリンク生成ショートコード
+//function shortcodeFunc ( $arg ) {
+//    extract ( shortcode_atts ( array (
+//        'id'         => 0,
+//        'title'      => '関連記事',
+//        'slug'       => '',
+//        'postpage'   => 'post',
+//        'anchorlink' => '',
+//        'anchortext' => '',
+//    ), $arg ) );
+//
+//    $html = "";
+//    $post_object = "";
+//
+//    if ( $slug ) {
+//        $post_object = get_page_by_path ( $slug, OBJECT, $postpage );
+//    } elseif ( $id != 0 ) {
+//        $post_object = get_post ( $id );
+//    }
+//
+//    if ( $post_object ) {
+//        if ( $anchorlink ) {
+//            $anchorlink = "#" . $anchorlink;
+//        }
+//        if ( $anchortext ) {
+//            $anchortext = "／" . $anchortext;
+//        }
+//        $html = '<div class="kanren-header">'.$title.'</div><div class="kanren"><a href="'.get_permalink ( $post_object -> ID ) . $anchorlink.'" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$post_object -> post_title . $anchortext.'</a></div>';
+//    }
+//
+//    return $html;
+//}
+//add_shortcode('mylink', 'shortcodeFunc');
 
 //記事内関連記事
-function kanren($atts) {
-    extract(shortcode_atts(array("url" => 'http://'), $atts));
-    $title = getPageTitle($url);
-    return '<div class="kanren-header">関連記事</div><div class="kanren"><a href="'.$url.'"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
-}
-
-function osusume($atts) {
-    extract(shortcode_atts(array("url" => 'http://'), $atts));
-    $title = getPageTitle($url);
-    return '<div class="kanren-header">オススメ！</div><div class="kanren"><a href="'.$url.'"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
-}
-
-add_shortcode("kanren", "kanren");
-add_shortcode("osusume", "osusume");
-
-function getPageTitle( $url ) {
-    $html = file_get_contents($url); //(1)
-    $html = mb_convert_encoding($html, mb_internal_encoding(), "auto" ); //(2)
-    if ( preg_match( "/<title>(.*?)<\/title>/i", $html, $matches) ) { //(3)
-        return $matches[1];
-    } else {
-        return false;
-    }
-}
+//function kanren($atts) {
+//    extract(shortcode_atts(array("url" => 'http://', 'title' => '関連記事'), $atts));
+//    $title = getPageTitle($url);
+//    return '<div class="kanren-header">'.$title.'</div><div class="kanren"><a href="'.$url.'" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
+//}
+//
+//add_shortcode("kanren", "kanren");
+//
+//function getPageTitle( $url ) {
+//    $html = file_get_contents($url); //(1)
+//    $html = mb_convert_encoding($html, mb_internal_encoding(), "auto" ); //(2)
+//    if ( preg_match( "/<title>(.*?)<\/title>/i", $html, $matches) ) { //(3)
+//        return $matches[1];
+//    } else {
+//        return false;
+//    }
+//}

@@ -974,6 +974,7 @@ div.amazon-want a:hover {
 
     #contents {
         width: 100% !important;
+        min-width: 100%;
     }
 
     #main, #sidebar {
@@ -991,6 +992,25 @@ div.amazon-want a:hover {
         border-bottom: 2px solid silver;
         color: #333;
     }
+    .post-thumbnail, .post-context {
+        float: none !important;
+        width: 100%;
+    }
+
+    .post-thumbnail {
+        margin: 0 20px 5px 0;
+    }
+
+    .post-thumbnail img {
+        width: 100%;
+        min-width: 100%;
+    }
+
+
+
+
+
+
 }
 
 

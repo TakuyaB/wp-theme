@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 /*
-Theme Name: original1.91
+Theme Name: original1.93
 Author: Takuya.B
 Description: for me.
-Version: 1.91
+Version: 1.93
 
 */
 
@@ -1051,6 +1051,20 @@ div.amazon-want a:hover {
         width: 100%;
     }
 
+    #header h1.title-logo {
+        width: 90%;
+        text-align: center;
+        margin:auto !important;
+        padding:0 !important;
+    }
+
+    #header h1.title-logo a {
+        font-size: 6.2vw !important;
+    }
+
+    #header p.description {
+        display: none;
+    }
     h2 {
         background-color: dodgerblue;
         color: white;

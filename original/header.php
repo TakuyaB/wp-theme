@@ -41,6 +41,10 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
             makePreview();
         });
     </script>
+    <?php wp_deregister_script('jquery'); ?>
+    <!-- WordPressのjQueryを読み込ませない -->
+
+    <script type="text/javascript" src="<?php bloginfo(template_url);?>/js/jquery-3.2.1.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <div id="container">

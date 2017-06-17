@@ -28,7 +28,6 @@
     <script type="text/x-mathjax-config">
 MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
 </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
     <script type="text/javascript">
         $(function() {
             function makePreview() {
@@ -41,10 +40,6 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
             makePreview();
         });
     </script>
-    <?php wp_deregister_script('jquery'); ?>
-    <!-- WordPressのjQueryを読み込ませない -->
-
-    <script type="text/javascript" src="<?php bloginfo(template_url);?>/js/jquery-3.2.1.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <div id="container">
@@ -60,34 +55,12 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
             </p>
         </div><!-- main-title ここまで -->
         <div class="bgc">
-            <p class="nav-open"><a href="#gNav">MENU</a></p>
+            <p id="nav-open"><a class="btn-open" href="#">MENU</a></p>
             <?php wp_nav_menu(
                 array(
                     'container' => false,
-                    'items_wrap' => '<nav><ul id="menu">%3$s</ul></nav>'
+                    'items_wrap' => '<nav class="nav"><ul id="menu">%3$s</ul></nav>'
                 )
             ); ?>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script type="text/javascript">
-                $(function(){
-                    $(".nav-open").click(function(){
-                        $(this).next().slideToggle();
-                    });
-                    $(".close").click(function(){
-                        $(this).parent().slideToggle();
-                        return false;
-                    });
-                    $(window).resize (function(){
-                        var win = $(window).width();
-                        var resp = 500;
-                        if(win > resp){
-                            $("#menu").show();
-                        } else {
-                            $("#menu").hide();
-                        }
-                    });
-                })(jQuery);
-            </script>
         </div><!-- bgc(nav-menu)ここまで -->
-
     </div><!-- headerここまで-->

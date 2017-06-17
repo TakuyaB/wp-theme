@@ -105,6 +105,12 @@ add_action('new_to_publish', 'set_title_publicize');
 add_action('pending_to_publish', 'set_title_publicize');
 add_action('future_to_publish', 'set_title_publicize');
 
+
+function js() {
+    wp_enqueue_script('myscript', get_template_directory_uri().'/dropdown.js', array('jquery'), false, false);
+}
+add_action('wp_enqueue_scripts', 'js');
+
 //グローバルメニューにサブタイトルを付けるための記述
 add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
 function description_in_nav_menu($item_output, $item){

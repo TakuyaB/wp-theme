@@ -236,7 +236,7 @@ ul#menu li:hover ul{
     margin-left: 0;
 }
 
-.nav-open {
+#nav-open {
     display: none;
 }
 
@@ -1119,7 +1119,6 @@ div.amazon-want a:hover {
     }
 
     nav{
-        display: none;
         width: 100%;
     }
 
@@ -1128,7 +1127,7 @@ div.amazon-want a:hover {
         background: #ccc;
     }
 
-    .nav-open{
+    #nav-open{
         display: block;
         position: relative;
         width: 100%;
@@ -1141,7 +1140,7 @@ div.amazon-want a:hover {
     /*background: #457B9D;*/
     /*}*/
 
-    .nav-open a{
+    #nav-open a{
         display: block;
         padding: 12px 0 10px;
         color: #fff;
@@ -1150,7 +1149,7 @@ div.amazon-want a:hover {
         background:#1D3557;
     }
 
-    .nav-open:before{
+    #nav-open:before{
         position: absolute;
         font-family: "blogicon";
         content: "\f003";

@@ -108,6 +108,7 @@ a:hover {
 #main {
     height: 100%;
     width: 69%;
+    min-width: 690 px;
     float: left;
 }
 
@@ -313,25 +314,25 @@ ul#menu li:hover ul{
 
 .post-thumbnail {
     width: 30%;
-    min-width: 250px;
+    min-width: 30%;
     float: left;
     margin: 0 20px 5px 0;
 }
 
 .post-thumbnail img {
     width: 100%;
-    min-width: 250px;
+    min-width: 100%;
 }
 
 .post-context {
     width: 65%;
-    min-width: 300px;
+    min-width: 65%;
     float: right;
 }
 
 .post-context h1.post-title {
     width: 100%;
-    min-width: 300px;
+    min-width: 100%;
     border-bottom: 2px solid silver;
     padding-bottom: 10px;
     line-height: 1;
@@ -438,12 +439,12 @@ a.page-numbers,
 }
 /* テスト↓ */
 /*#main .single-post h2 {*/
-    /*color: #333 !important;*/
-    /*margin: 20px 0 20px 0;*/
-    /*padding-left: 20px;*/
-    /*border-top: 2px solid #333 !important;*/
-    /*border-bottom: 2px solid #333 !important;*/
-    /*line-height: 2;*/
+/*color: #333 !important;*/
+/*margin: 20px 0 20px 0;*/
+/*padding-left: 20px;*/
+/*border-top: 2px solid #333 !important;*/
+/*border-bottom: 2px solid #333 !important;*/
+/*line-height: 2;*/
 /*}*/
 
 #main .single-post h3 {
@@ -993,11 +994,11 @@ div.amazon-want a:hover {
 }
 
 
-    /* -------------------------------------
-     *
-     * 臨時：随時各secに記述
-     *
-     ------------------------------------- */
+/* -------------------------------------
+ *
+ * 臨時：随時各secに記述
+ *
+ ------------------------------------- */
 
 .news {
     width: 1400px;

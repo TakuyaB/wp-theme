@@ -8,15 +8,37 @@
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
     <!-- レスポンシブに必要な記述:Viewpoint -->
-    <meta name="viewpoint" content="width=device-width">
-    <link rel="alternate" type="application/json+oembed" href="http://localhost/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2F20100806080939.html" />
-    <link rel="alternate" type="text/xml+oembed" href="http://localhost/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fwordpress%2F20100806080939.html&#038;format=xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!--最小限のビューポート設定-->
+    <meta name="viewport" content="width=device-width">
     <?php wp_head(); ?>
+    <!--アドセンス-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-8190426600607976",
             enable_page_level_ads: true
+        });
+    </script>
+    <!-- 数式記述Mathjaxの読み込み -->
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
+</script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            function makePreview() {
+                input = $('#input').val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                $('#preview').html(input);
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
+            }
+            $('body').keyup(function(){makePreview()});
+            $('body').bind('updated',function(){makePreview()});
+            makePreview();
         });
     </script>
 </head>
@@ -34,12 +56,34 @@
             </p>
         </div><!-- main-title ここまで -->
         <div class="bgc">
+            <p class="nav-open"><a href="#gNav">MENU</a></p>
             <?php wp_nav_menu(
                 array(
                     'container' => false,
                     'items_wrap' => '<nav><ul id="menu">%3$s</ul></nav>'
                 )
             ); ?>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                    $(".nav-open").click(function(){
+                        $(this).next().slideToggle();
+                    });
+                    $(".close").click(function(){
+                        $(this).parent().slideToggle();
+                        return false;
+                    });
+                    $(window).resize (function(){
+                        var win = $(window).width();
+                        var resp = 500;
+                        if(win > resp){
+                            $("#menu").show();
+                        } else {
+                            $("#menu").hide();
+                        }
+                    });
+                })(jQuery);
+            </script>
         </div><!-- bgc(nav-menu)ここまで -->
 
     </div><!-- headerここまで-->

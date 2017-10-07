@@ -19,7 +19,7 @@
                     <?php echo get_the_date(); ?>
                 </time>
                 <!-- Update Date -->
-                <?php if( get_the_date() != get_the_modified_date() ): ?>
+                <?php if( get_the_date('Ymd') < get_the_modified_date('Ymd') ): ?>
                     <time datetime="<?php echo get_the_modified_date( 'Y-m-d' ) ?>">
                         <i class="fa fa-repeat"></i>
                         <?php echo get_the_modified_date() ?>
@@ -30,6 +30,7 @@
                     <?php the_category( ', ' ); ?>
                 </span>
             </div>
+            <?php get_template_pert('sns-btn'); ?>
             <?php the_content(); ?>
             <!-- 記事下に入れたいお知らせやオススメ記事のdivはここ-->
             <div class="post-under-profile">
@@ -55,6 +56,7 @@
                     <div class="clear"></div>
                 </div>
             </div>
+            <?php get_template_part('sns-btn'); ?>
             <!-- single-pager -->
             <div class="single-pager">
                 <div class="prev-link">

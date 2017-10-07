@@ -1,12 +1,103 @@
 @charset "UTF-8";
 
 /*
-Theme Name: original2.0
+Theme Name: original2.01
 Author: Takuya.B
 Description: for me.
-Version: 2.0
+Version: 2.01
 
 */
+ul#sns_btn {
+    width:100%;
+    float: left;
+    clear: both;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+ul#sns_btn:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+ul#sns_btn li.sns_btnInner {
+    width:15%;
+    float: left;
+    padding: 0px;
+    margin: 0px 2% 0px 0px;
+    list-style-type: none;
+}
+
+ul#sns_btn li.sns_btnInner:nth-child(6n) {
+    width:15%;
+    margin: 0px 0px 0px 0px;
+}
+
+@media (max-width: 659px) {
+    ul#sns_btn li.sns_btnInner {
+        width:32%;
+        margin: 0px 2% 5px 0px;
+    }
+}
+
+@media (max-width: 659px) {
+    ul#sns_btn li.sns_btnInner:nth-child(3n) {
+        width:32%;
+        margin: 0px 0px 5px 0px;
+    }
+    ul#sns_btn li.sns_btnInner:nth-child(6n) {
+        width:32%;
+        margin: 0px 0px 5px 0px;
+    }
+}
+
+ul#sns_btn li.sns_btnInner a {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 100%;
+    color:#ffffff;
+    display: block;
+    padding: 12px 0px;
+    margin: 0px;
+    background-color:#f5f5f5;
+    text-align:center;
+    text-decoration: none;
+    border-radius:5px;
+}
+
+@media (max-width: 659px) {
+    ul#sns_btn li.sns_btnInner a {
+        font-size: 14px;
+        padding: 10px 0px;
+    }
+}
+
+ul#sns_btn li.sns_btnInner a.twitter {
+    background-color: #00acee;
+}
+
+ul#sns_btn li.sns_btnInner a.facebook {
+    background-color: #3b5998;
+}
+
+ul#sns_btn li.sns_btnInner a.google_plus {
+    background-color: #dd4b39;
+}
+
+ul#sns_btn li.sns_btnInner a.hatena {
+    background-color: #2D4C86;
+}
+
+ul#sns_btn li.sns_btnInner a.pocket {
+    background-color: #EE4056;
+}
+
+ul#sns_btn li.sns_btnInner a.line {
+    background-color: #5ae628;
+}
 
 .kanren-header {
     display: inline-block;
@@ -41,8 +132,8 @@ Version: 2.0
 
 * {
     font-family: "Meiryo UI", sans-serif;
-    font-size: 18px;
-    color: #333;
+    font-size: 16px;
+    color: #444;
     margin: 0;
     padding: 0;
 }
@@ -104,7 +195,7 @@ a:hover {
 }
 
 #contents {
-    width: 1400px;
+    width: 1200px;
     margin: auto;
     overflow: hidden;
     background-color: white;
@@ -187,8 +278,8 @@ a:hover {
 }
 
 nav {
-    width: 1400px;
-    margin: 0 auto 40px;
+    width: 1200px;
+    margin: 0 auto 0px;
     padding: 0;
     font-size: 98%;
 }
@@ -198,7 +289,7 @@ ul#menu {
     position: relative;
     height: 40px;
     margin: 0;
-    padding: 0 40px;
+    padding: 0;
     background-color: white;
     text-align: center;
 }
@@ -525,24 +616,36 @@ a.page-numbers,
 /*----------------------------
  * subsec.引用(未編集)
  -----------------------------*/
-
+#main blockquote p {
+    margin-bottom: 1em !important;
+}
 #main blockquote {
-    background-color: #ddd;
     padding: 1em 1em 1em 3em;
     position: relative;
-    border-left: 3px solid #333;
-    margin-bottom: 54px;
+    border: 2px solid #666;
+    margin-bottom: 3em;
 }
 
 #main blockquote:before {
     content:"“";
-    font-size: 600%;
+    font-size: 400%;
     line-height: 1em;
     font-family: "MS Pゴシック", sans-serif;
     color: #999;
     position:absolute;
-    left: 0;
-    top: 0;
+    left: 5px;
+    top: 5px;
+}
+
+#main blockquote:after {
+    content:"”";
+    font-size: 400%;
+    line-height: 0;
+    font-family: "MS Pゴシック", sans-serif;
+    color: #999;
+    position:absolute;
+    right: 5px;
+    bottom: 5px;
 }
 
 
@@ -860,29 +963,32 @@ div.amazon-want a:hover {
 
 .booklink-info .booklink-name p a,
 .kaerebalink-info .kaerebalink-name p a {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .booklink-info .booklink-name .booklink-powered-date,
 .kaerebalink-info .kaerebalink-name .kaerebalink-powered-date {
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 .booklink-info .booklink-name .booklink-powered-date a,
 .kaerebalink-info .kaerebalink-name .kaerebalink-powered-date a{
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 .booklink-detail,
 .kaerebalink-detail{
-    font-size: 16px !important;
+    font-size: 14px !important;
 }
 
-
+.shplinkamazon a:hover, .shoplinkkindle a:hover, .shoplinkrakuten a:hover {
+    color: white;
+    text-decoration: underline;
+}
 
 /* Amazon */
 .shoplinkamazon {
-    width: 200px;
+    width: 30%;
     display: inline-block   !important;
     background-color: #ff9900 !important;
     padding: 5px;
@@ -898,7 +1004,7 @@ div.amazon-want a:hover {
 
 /* Kindle(Amazon) */
 .shoplinkkindle {
-    width: 200px;
+    width: 30%;
     display: inline-block !important;
     background-color: #333;
     padding: 5px;
@@ -915,7 +1021,7 @@ div.amazon-want a:hover {
 
 /* 楽天 */
 .shoplinkrakuten {
-    width: 200px;
+    width: 30%;
     display: inline-block !important;
     background-color: #bf0000;
     padding: 5px;

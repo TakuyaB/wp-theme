@@ -116,55 +116,28 @@ add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
 function description_in_nav_menu($item_output, $item){
     return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br /><span>{$item->attr_title}</span><", $item_output);
 }
-//自サイトのリンク生成ショートコード
-//function shortcodeFunc ( $arg ) {
-//    extract ( shortcode_atts ( array (
-//        'id'         => 0,
-//        'title'      => '関連記事',
-//        'slug'       => '',
-//        'postpage'   => 'post',
-//        'anchorlink' => '',
-//        'anchortext' => '',
-//    ), $arg ) );
-//
-//    $html = "";
-//    $post_object = "";
-//
-//    if ( $slug ) {
-//        $post_object = get_page_by_path ( $slug, OBJECT, $postpage );
-//    } elseif ( $id != 0 ) {
-//        $post_object = get_post ( $id );
-//    }
-//
-//    if ( $post_object ) {
-//        if ( $anchorlink ) {
-//            $anchorlink = "#" . $anchorlink;
-//        }
-//        if ( $anchortext ) {
-//            $anchortext = "／" . $anchortext;
-//        }
-//        $html = '<div class="kanren-header">'.$title.'</div><div class="kanren"><a href="'.get_permalink ( $post_object -> ID ) . $anchorlink.'" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$post_object -> post_title . $anchortext.'</a></div>';
-//    }
-//
-//    return $html;
-//}
-//add_shortcode('mylink', 'shortcodeFunc');
 
-//記事内関連記事
-//function kanren($atts) {
-//    extract(shortcode_atts(array("url" => 'http://', 'title' => '関連記事'), $atts));
-//    $title = getPageTitle($url);
-//    return '<div class="kanren-header">'.$title.'</div><div class="kanren"><a href="'.$url.'" target="_blank"><i class="fa fa-hand-o-right" aria-hidden="true"></i>'.$title.'</a></div>';
-//}
-//
-//add_shortcode("kanren", "kanren");
-//
-//function getPageTitle( $url ) {
-//    $html = file_get_contents($url); //(1)
-//    $html = mb_convert_encoding($html, mb_internal_encoding(), "auto" ); //(2)
-//    if ( preg_match( "/<title>(.*?)<\/title>/i", $html, $matches) ) { //(3)
-//        return $matches[1];
-//    } else {
-//        return false;
-//    }
-//}
+function count_title_characters() {?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            //in_selの文字数をカウントしてout_selに出力する
+            function count_characters(in_sel, out_sel) {
+                $(out_sel).html( $(in_sel).val().length );
+            }
+
+            //ページ表示に表示エリアを出力
+            $('#titlewrap').after('<div style="position:absolute;top:-24px;right:0;color:#666;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;">文字数<span class="wp-title-count" style="margin-left:5px;">0</span></div>');
+
+            //ページ表示時に数える
+            count_characters('#title', '.wp-title-count');
+
+            //入力フォーム変更時に数える
+            $('#title').bind("keydown keyup keypress change",function(){
+                count_characters('#title', '.wp-title-count');
+            });
+
+        });
+    </script><?php
+}
+add_action( 'admin_head-post-new.php', 'count_title_characters' );
+add_action( 'admin_head-post.php', 'count_title_characters' );

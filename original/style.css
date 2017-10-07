@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 /*
-Theme Name: original1.93
+Theme Name: original2.0
 Author: Takuya.B
 Description: for me.
-Version: 1.93
+Version: 2.0
 
 */
 
@@ -25,6 +25,11 @@ Version: 1.93
 
 .kanren i {
     margin-right: 5px;
+}
+
+#header .title-logo a img {
+    height: 100px !important;
+    border: none;
 }
 
 
@@ -64,6 +69,14 @@ h2 {
 
 h3 {
     font-size: 24px;
+}
+
+h4{
+    margin-bottom: -54px;
+}
+
+.crayon-os-pc {
+    margin-top: -50px !important;
 }
 
 
@@ -139,7 +152,7 @@ a:hover {
     padding-top: 20px;
     margin-left: 50px;
     margin-bottom: 0;
-    height: 50px;
+    height: 100px;
 }
 
 #header h1.title-logo a {
@@ -206,6 +219,12 @@ ul#menu li a {
     text-align: center;
     line-height: 40px;
 }
+
+/*ul#menu li a:before {*/
+    /*content: "▼";*/
+    /*color:#333;*/
+    /*font-size: 10px;*/
+/*}*/
 
 ul#menu li a:hover {
     color: #333;
@@ -440,15 +459,7 @@ a.page-numbers,
     color: #333;
     line-height: 2;
 }
-/* テスト↓ */
-/*#main .single-post h2 {*/
-/*color: #333 !important;*/
-/*margin: 20px 0 20px 0;*/
-/*padding-left: 20px;*/
-/*border-top: 2px solid #333 !important;*/
-/*border-bottom: 2px solid #333 !important;*/
-/*line-height: 2;*/
-/*}*/
+
 
 #main .single-post h3 {
     font-size: 20px;
@@ -563,26 +574,10 @@ a.page-numbers,
 
 .related-entry {
     width: 100%;
-    height: 230px;
-    border-bottom: 1px solid silver;
 }
 
-.related-entry-thumb {
-    position: relative;
-    width:30%;
-    min-width: 110px;
-    margin:10px;
-    float: left;
-}
-
-.related-entry-content {
-    width: 65%;
-    min-width: 235px;
-    float: right;
-}
-
-.related-entry-content h4 {
-    margin-top: 20px;
+.related-entry-title {
+    margin: 20px;
 }
 
 
@@ -732,8 +727,9 @@ div.go-to-twitter a:hover {
     text-decoration: none;
     opacity: 0.8;
 }
-/* FaceBookページ リンク */
-div.go-to-fbpage {
+
+/* FaceBook個人, FaceBookページ リンク */
+div.go-to-fbpage, div.go-to-facebook {
     font-size: 18px;
     background-color: #315096;
     line-height: 2;
@@ -741,13 +737,13 @@ div.go-to-fbpage {
     margin-bottom: 10px;
 }
 
-div.go-to-fbpage a {
+div.go-to-fbpage a, div.go-to-facebook a {
     display: block;
     font-weight: bold;
     color: whitesmoke;
 }
 
-div.go-to-fbpage a:hover {
+div.go-to-fbpage a:hover, div.go-to-facebook a:hover {
     text-decoration: none;
     opacity: 0.8;
 }
@@ -769,6 +765,26 @@ div.go-to-note a {
 }
 
 div.go-to-note a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* VALUリンク */
+div.go-to-valu {
+    font-size: 18px;
+    background-color: #F6AD00;
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div.go-to-valu a {
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+
+div.go-to-valu a:hover {
     text-decoration: none;
     opacity: 0.8;
 }
@@ -1065,16 +1081,14 @@ div.amazon-want a:hover {
     #header p.description {
         display: none;
     }
-    h2 {
-        background-color: dodgerblue;
-        color: white;
-    }
 
-    h3 {
-        border-top: 2px solid silver;
-        border-bottom: 2px solid silver;
+    #main .single-post h2 {
+        padding: 0 20px 0 20px;
+        border-top: 2px solid dodgerblue;
+        border-bottom: 2px solid dodgerblue;
         color: #333;
     }
+
     .post-thumbnail, .post-context {
         float: none !important;
         width: 100%;
@@ -1097,9 +1111,23 @@ div.amazon-want a:hover {
 
     ul#menu li:hover ul{
         display: none;
+
+    }
+
+    ul#menu {
+        margin: 0;
+        padding: 0;
+        min-width: 100% !important;
+    }
+
+    .wp_social_bookmarking_light {
+        z-index: -1;
     }
 
     ul#menu li {
+        position: relative;
+        z-index: 1000;
+        min-width: 100%;
         float: none;
         background-color: white;
         border-bottom: 1px solid silver;
@@ -1108,20 +1136,17 @@ div.amazon-want a:hover {
     }
 
     .bgc {
-        max-width: 100%;
+        min-width: 100%;
         min-height: 40px !important;
     }
 
     nav {
+        display: none;
+        width: 100%;
         margin-bottom: 40px !important;
-        max-width: 98%;
+        min-width: 100%;
         font-size: 10px;
     }
-
-    nav{
-        width: 100%;
-    }
-
 
     #menu a:hover{
         background: #ccc;
@@ -1133,13 +1158,6 @@ div.amazon-want a:hover {
         width: 100%;
     }
 
-    /*.close{*/
-    /*display: block;*/
-    /*position: relative;*/
-    /*width: 100%;*/
-    /*background: #457B9D;*/
-    /*}*/
-
     #nav-open a{
         display: block;
         padding: 12px 0 10px;
@@ -1149,17 +1167,17 @@ div.amazon-want a:hover {
         background:#1D3557;
     }
 
-    #nav-open:before{
-        position: absolute;
-        font-family: "blogicon";
-        content: "\f003";
-        top: 50%;
-        right: 10px;
-        width: 20px;
-        height: 20px;
-        margin-top: -10px;
-        color:#fff;
-    }
+    /*.related-entry-content {*/
+    /*width: 100%;*/
+    /*!*min-width: 100%;*!*/
+    /*float: none;*/
+    /*}*/
+    /*.related-entry {*/
+    /*width: 100%;*/
+    /*height: 180px;*/
+    /*border-bottom: 1px solid silver;*/
+    /*}*/
+
 }
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?php bloginfo( 'name' ); ?><?php wp_title(); ?></title>
     <!-- CSS,JavaScriptファイルの指定はここ -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
     <!-- レスポンシブに必要な記述:Viewpoint -->
@@ -21,25 +21,6 @@
             enable_page_level_ads: true
         });
     </script>
-    <!-- 数式記述Mathjaxの読み込み -->
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
-</script>
-    <script type="text/javascript">
-        $(function() {
-            function makePreview() {
-                input = $('#input').val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                $('#preview').html(input);
-                MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
-            }
-            $('body').keyup(function(){makePreview()});
-            $('body').bind('updated',function(){makePreview()});
-            makePreview();
-        });
-    </script>
 </head>
 <body <?php body_class(); ?>>
 <div id="container">
@@ -47,12 +28,9 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$']] } });
         <div class="main-title">
             <h1 class="title-logo">
                 <a href="<?php echo home_url(); ?>">
-                    <?php bloginfo( 'name' ); ?>
+                    <img src="https://takuyab.com/wp-content/uploads/2017/08/A85srMjS.jpg">
                 </a>
             </h1>
-            <p class="description">
-                <?php bloginfo( 'description' ); ?>
-            </p>
         </div><!-- main-title ここまで -->
         <div class="bgc">
             <p id="nav-open"><a class="btn-open" href="#">MENU</a></p>

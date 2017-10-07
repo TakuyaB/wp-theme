@@ -10,6 +10,6 @@
 
     <li class="sns_btnInner"><a class="pocket" href="http://getpocket.com/edit?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="pocketで共有"><i style="color: white; margin-right: 6px;" class="fa fa-get-pocket" aria-hidden="true"></i>pocket</a></li>
 
-    <li class="sns_btnInner"><a class="line" href="http://line.naver.jp/R/msg/text/?<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>" target="_blank" title="LINEで送る">LINE</a></li>
+    <li class="sns_btnInner"><a class="line" href="https://feedly.com/i/subscription/feed/https://takuyab.com/feed/" target="_blank" title="Feedlyで定期購読">Feedly</a></li>
 
 </ul>

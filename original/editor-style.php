@@ -16,6 +16,7 @@ add_filter( 'tiny_mce_before_init', function ($settings) {
         '10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 42px 48px';
     //$settings['fontsize_formats'] = '0.8em 1.6em 2em 3em';
     //$settings['fontsize_formats'] = '80% 160% 200% 300%';
+
     return $settings;
 } );
 //Wordpressビジュアルエディタに文字サイズの変更機能を追加
@@ -31,19 +32,27 @@ if ( !function_exists( 'initialize_tinymce_styles' ) ):
         //追加するスタイルの配列を作成
         $style_formats = array(
             array(
+                'title' => '太字',
+                'inline' => 'span',
+                'classes' => 'bold'
+            ),
+            array(
                 'title' => '赤マーカー',
                 'inline' => 'span',
-                'classes' => 'red-marker'
+                'classes' => 'red-marker',
+                'wrapper' => true
             ),
             array(
                 'title' => '青マーカー',
                 'inline' => 'span',
-                'classes' => 'blue-marker'
+                'classes' => 'blue-marker',
+                'wrapper' => true
             ),
             array(
                 'title' => '黄マーカー',
                 'inline' => 'span',
-                'classes' => 'yellow-marker'
+                'classes' => 'yellow-marker',
+                'wrapper' => true
             ),
             array(
                 'title' => '緑マーカー',

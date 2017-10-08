@@ -11,8 +11,8 @@ ul#sns_btn {
     width:100%;
     float: left;
     clear: both;
-    padding: 0px;
-    margin: 0px 0px 10px 0px;
+    padding: 0;
+    margin: 0 0 10px 0;
 }
 
 ul#sns_btn:after {
@@ -26,31 +26,31 @@ ul#sns_btn:after {
 ul#sns_btn li.sns_btnInner {
     width:15%;
     float: left;
-    padding: 0px;
-    margin: 0px 2% 0px 0px;
+    padding: 0;
+    margin: 0 2% 0 0;
     list-style-type: none;
 }
 
 ul#sns_btn li.sns_btnInner:nth-child(6n) {
     width:15%;
-    margin: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
 }
 
 @media (max-width: 659px) {
     ul#sns_btn li.sns_btnInner {
         width:32%;
-        margin: 0px 2% 5px 0px;
+        margin: 0 2% 5px 0;
     }
 }
 
 @media (max-width: 659px) {
     ul#sns_btn li.sns_btnInner:nth-child(3n) {
         width:32%;
-        margin: 0px 0px 5px 0px;
+        margin: 0 0 5px 0;
     }
     ul#sns_btn li.sns_btnInner:nth-child(6n) {
         width:32%;
-        margin: 0px 0px 5px 0px;
+        margin: 0 0 5px 0;
     }
 }
 
@@ -60,8 +60,8 @@ ul#sns_btn li.sns_btnInner a {
     line-height: 100%;
     color:#ffffff;
     display: block;
-    padding: 12px 0px;
-    margin: 0px;
+    padding: 12px 0;
+    margin: 0;
     background-color:#f5f5f5;
     text-align:center;
     text-decoration: none;
@@ -71,7 +71,7 @@ ul#sns_btn li.sns_btnInner a {
 @media (max-width: 659px) {
     ul#sns_btn li.sns_btnInner a {
         font-size: 14px;
-        padding: 10px 0px;
+        padding: 10px 0;
     }
 }
 
@@ -279,7 +279,7 @@ a:hover {
 
 nav {
     width: 1200px;
-    margin: 0 auto 0px;
+    margin: 0 auto 0;
     padding: 0;
     font-size: 98%;
 }
@@ -1042,6 +1042,9 @@ div.amazon-want a:hover {
  * ビジュアルエディタのスタイルを反映させる
  *
  ------------------------------------- */
+span.bold {
+    font-weight: bold;
+}
 
 /*フォント：色付きマーカー*/
 .red-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;}

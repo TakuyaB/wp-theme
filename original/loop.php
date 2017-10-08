@@ -11,24 +11,7 @@
                     <?php the_title(); ?>
                 </a>
             </h1>
-            <div class="post-info">
-                <!-- Creation Date -->
-                <time datetime="<?php echo get_the_date( 'Y-m-d' ) ?>">
-                    <i class="fa fa-clock-o"></i>
-                    <?php echo get_the_date(); ?>
-                </time>
-                <!-- Update Date -->
-                <?php if( get_the_date() != get_the_modified_date() ): ?>
-                <time>
-                    <i class="fa fa-repeat"></i>
-                    <?php echo get_the_modified_date() ?>
-                </time>
-                <?php endif; ?><!-- Update Dateここまで -->
-                <span class="post-category">
-                            <i class="fa fa-folder-open"></i>
-                    <?php the_category( ', ' ); ?>
-                        </span>
-            </div><!-- post-infoここまで -->
+            <?php get_template_part('postinfo'); ?>
         </div><!-- post-contextここまで -->
         <div class="post-float-clear">
             <!-- 中身は空っぽ -->

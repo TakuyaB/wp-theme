@@ -5,28 +5,7 @@
             <?php get_template_part('breadcrumb'); ?>
             <?php if(have_posts()): while(have_posts()): the_post(); ?><!--記事がある場合-->
             <div <?php post_class( 'single-post' ); ?>>
-                <h1 class="post-title">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h1>
-                <div class="post-info">
-                    <time datetime="<?php echo get_the_date( 'Y-m-d' ) ?>">
-                        <i class="fa fa-clock-o"></i>
-                        <?php echo get_the_date(); ?>
-                    </time>
-                    <!-- Update Date -->
-                    <?php if( get_the_date('Ymd') < get_the_modified_date('Ymd') ): ?>
-                        <time datetime="<?php echo get_the_modified_date( 'Y-m-d' ) ?>">
-                            <i class="fa fa-repeat"></i>
-                            <?php echo get_the_modified_date() ?>
-                        </time>
-                    <?php endif; ?>
-                    <span class="post-category">
-                    <i class="fa fa-folder-open"></i>
-                        <?php the_category( ', ' ); ?>
-                </span>
-                </div>
+                <?php get_template_part('postinfo'); ?>
                 <?php get_template_part('sns-btn'); ?>
                 <?php the_content(); ?>
                 <!-- 記事下に入れたいお知らせやオススメ記事のdivはここ-->

@@ -1,3 +1,8 @@
+<h1 class="post-title">
+    <a href="<?php the_permalink(); ?>">
+        <?php the_title(); ?>
+    </a>
+</h1>
 <div class="post-info">
     <!-- Creation Date -->
     <time datetime="<?php echo get_the_date( 'Y-m-d' ) ?>">

@@ -6,11 +6,6 @@
             <?php endif; ?>
         </div><!-- post-thumbnailここまで -->
         <div class="post-context">
-            <h1 class="post-title">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h1>
             <?php get_template_part('postinfo'); ?>
         </div><!-- post-contextここまで -->
         <div class="post-float-clear">

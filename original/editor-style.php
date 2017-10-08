@@ -31,20 +31,46 @@ if ( !function_exists( 'initialize_tinymce_styles' ) ):
         //追加するスタイルの配列を作成
         $style_formats = array(
             array(
-                'title' => '太字',
+                'title' => '赤マーカー',
                 'inline' => 'span',
-                'classes' => 'bold'
+                'classes' => 'red-marker'
             ),
             array(
-                'title' => '赤字',
+                'title' => '青マーカー',
                 'inline' => 'span',
-                'classes' => 'red'
+                'classes' => 'blue-marker'
             ),
             array(
-                'title' => 'successボックス',
+                'title' => '黄マーカー',
+                'inline' => 'span',
+                'classes' => 'yellow-marker'
+            ),
+            array(
+                'title' => '緑マーカー',
+                'inline' => 'span',
+                'classes' => 'green-marker'
+            ),
+            array(
+                'title' => '黄ボックス',
                 'block' => 'div',
-                'classes' => 'sp-success'
+                'classes' => 'information-box',
+                'wrapper' => true,
+                'merge_siblings' => false
             ),
+            array(
+                'title' => '赤ボックス',
+                'block' => 'div',
+                'classes' => 'warning-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            ),
+            array(
+                'title' => '緑ボックス',
+                'block' => 'div',
+                'classes' => 'green-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            )
         );
         //JSONに変換
         $init_array['style_formats'] = json_encode($style_formats);

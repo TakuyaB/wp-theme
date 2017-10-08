@@ -1071,9 +1071,16 @@ div.amazon-want a:hover {
     margin-bottom: 3em;
 }
 
-.information-box p, .warning-box p , .green-box p{
+.information-box p, .warning-box p, .green-box p{
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.information-box ul, .warning-box ul, .green-box ul,
+.information-box ol, .warning-box ol, .green-box ol {
+    padding: 0 !important;
+    margin-left: 30px !important;
+    margin-bottom: 0 !important;
 }
 
 

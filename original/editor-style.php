@@ -18,9 +18,54 @@ add_filter( 'tiny_mce_before_init', function ($settings) {
     //$settings['fontsize_formats'] = '80% 160% 200% 300%';
     return $settings;
 } );
-
+//Wordpressビジュアルエディタに文字サイズの変更機能を追加
 add_filter('mce_buttons_3', function ($buttons){
     array_push($buttons, 'fontsizeselect');
     return $buttons;
-})
+});
+
+//ビジュアルエディタ:文字などのスタイル指定機能を追加
+//参考：http://com4tis.net/tinymce-advanced-post-custom/
+if ( !function_exists( 'initialize_tinymce_styles' ) ):
+    function initialize_tinymce_styles($init_array) {
+        //追加するスタイルの配列を作成
+        $style_formats = array(
+            array(
+                'title' => '太字',
+                'inline' => 'span',
+                'classes' => 'bold'
+            ),
+            array(
+                'title' => '赤字',
+                'inline' => 'span',
+                'classes' => 'red'
+            ),
+            array(
+                'title' => 'successボックス',
+                'block' => 'div',
+                'classes' => 'sp-success'
+            ),
+        );
+        //JSONに変換
+        $init_array['style_formats'] = json_encode($style_formats);
+        return $init_array;
+    }
+endif;
+add_filter('tiny_mce_before_init', 'initialize_tinymce_styles', 10000);
+
+//TinyMCEにスタイルセレクトボックスを追加
+//https://codex.wordpress.org/Plugin_API/Filter_Reference/mce_buttons,_mce_buttons_2,_mce_buttons_3,_mce_buttons_4
+if ( !function_exists( 'add_styles_to_tinymce_buttons' ) ):
+    function add_styles_to_tinymce_buttons($buttons) {
+        //見出しなどが入っているセレクトボックスを取り出す
+        $temp = array_shift($buttons);
+        //先頭にスタイルセレクトボックスを追加
+        array_unshift($buttons, 'styleselect');
+        //先頭に見出しのセレクトボックスを追加
+        array_unshift($buttons, $temp);
+
+        return $buttons;
+    }
+endif;
+add_filter('mce_buttons_3','add_styles_to_tinymce_buttons');
 ?>

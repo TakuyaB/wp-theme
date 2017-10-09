@@ -95,7 +95,7 @@ ul#sns_btn li.sns_btnInner a.pocket {
     background-color: #EE4056;
 }
 
-ul#sns_btn li.sns_btnInner a.line {
+ul#sns_btn li.sns_btnInner a.feedly {
     background-color: #8AB153;
 }
 
@@ -1044,6 +1044,10 @@ div.amazon-want a:hover {
  ------------------------------------- */
 span.bold {
     font-weight: bold;
+}
+
+span {
+    line-height: 1.5em !important;
 }
 
 /*フォント：色付きマーカー*/

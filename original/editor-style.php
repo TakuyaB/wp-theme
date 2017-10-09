@@ -5,7 +5,6 @@ function custom_editor_settings( $initArray ){
 $initArray['body_class'] = 'editor-area'; //オリジナルのクラスを設定する
 return $initArray;
 }
-
 add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
 
 //ビジュアルエディタにフォントサイズ変更ドロップダウンリストを追加
@@ -24,7 +23,6 @@ add_filter('mce_buttons_3', function ($buttons){
     array_push($buttons, 'fontsizeselect');
     return $buttons;
 });
-
 //ビジュアルエディタ:文字などのスタイル指定機能を追加
 //参考：http://com4tis.net/tinymce-advanced-post-custom/
 if ( !function_exists( 'initialize_tinymce_styles' ) ):

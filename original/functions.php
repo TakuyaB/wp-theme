@@ -1,12 +1,5 @@
 <?php
-//ビジュアルエディタのフォント変更
-add_editor_style('editor-style.css');
-function custom_editor_settings( $initArray ){
-    $initArray['body_class'] = 'editor-area'; //オリジナルのクラスを設定する
-    return $initArray;
-}
-add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
-
+require_once ('editor-style.php');
 //ウィジェット
 register_sidebar();
 

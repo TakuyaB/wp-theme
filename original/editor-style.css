@@ -1,3 +1,51 @@
+span.bold {
+    font-weight: bold;
+}
+
+span {
+    line-height: 1.5em !important;
+}
+
+/*フォント：色付きマーカー*/
+.red-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;}
+.blue-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;}
+.yellow-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;}
+.green-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #DFF0D8 0%) repeat scroll 0 0;}
+
+/* ボックスデザイン */
+.information-box {
+    background-color: #FCFFD8;
+    border: 1px solid silver;
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.warning-box {
+    background-color: #FFDFEF;
+    border: 1px solid silver;
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.green-box {
+    background-color: #DFF0D8;
+    border: 1px solid silver;
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.information-box p, .warning-box p, .green-box p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.information-box ul, .warning-box ul, .green-box ul,
+.information-box ol, .warning-box ol, .green-box ol {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-left: 30px !important;
+}
+
 /* フォントを指定するクラス */
 body.mceContentBody {
     font-size: 18px;
@@ -50,7 +98,6 @@ body.editor-area h2 {
     top: 0;
 }
 
-.editor-area ul,
-.editor-area ol {
+.editor-area ul,.editor-area ol {
     margin-bottom: 54px;
 }

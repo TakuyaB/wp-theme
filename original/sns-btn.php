@@ -6,7 +6,7 @@
 
     <li class="sns_btnInner"><a class="google_plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="Google+で共有"><i style="color: white; margin-right:7px;"class="fa fa-google-plus"></i>Google+</a></li>
 
-    <li class="sns_btnInner"><a class="hatena" href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(the_title("","",0)); ?>" target="_blank" data-hatena-bookmark-title="<?php the_permalink(); ?>" title="このエントリーをはてなブックマークに追加"><span style="color: white; margin-right:7px;">B!</span>はてブ</a></li>
+    <li class="sns_btnInner"><a class="hatena" href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=<?php echo urlencode(get_permalink()); ?>&amp;title=<?php echo urlencode(the_title("","",0)); ?>" target="_blank" data-hatena-bookmark-title="<?php the_permalink(); ?>" title="このエントリーをはてなブックマークに追加"><span style="color: white; margin-right:7px; font-size:70%;">B!</span>はてブ</a></li>
 
     <li class="sns_btnInner"><a class="pocket" href="http://getpocket.com/edit?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="pocketで共有"><i style="color: white; margin-right: 6px;" class="fa fa-get-pocket" aria-hidden="true"></i>pocket</a></li>
 

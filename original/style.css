@@ -7,6 +7,11 @@ Description: for me.
 Version: 2.01
 
 */
+
+.ad_under_post {
+    width: 100%;
+    height: 500px;
+}
 ul#sns_btn {
     width:100%;
     float: left;

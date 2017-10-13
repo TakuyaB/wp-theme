@@ -1005,6 +1005,7 @@ div.amazon-want a:hover {
     text-decoration: underline;
 }
 
+
 /* Amazon */
 .shoplinkamazon {
     width: 30%;
@@ -1055,7 +1056,6 @@ div.amazon-want a:hover {
     color: whitesmoke;
 }
 
-
 /* -------------------------------------
  *
  * ビジュアルエディタのスタイルを反映させる
@@ -1063,10 +1063,6 @@ div.amazon-want a:hover {
  ------------------------------------- */
 span.bold {
     font-weight: bold;
-}
-
-span {
-    line-height: 1.5em !important;
 }
 
 /*フォント：色付きマーカー*/
@@ -1225,6 +1221,10 @@ span {
  *
  -------------------------------------------------*/
 @media screen and (max-width: 500px) {
+    .shoplinkamazon {
+        width: 100% !important;
+    }
+
     #header {
         width: 100% !important;
     }
@@ -1279,15 +1279,9 @@ span {
         min-width: 100%;
     }
 
-
-
-
     /*スマホ用メニュー*/
-
-
     ul#menu li:hover ul{
         display: none;
-
     }
 
     ul#menu {
@@ -1343,17 +1337,11 @@ span {
         background:#1D3557;
     }
 
-    /*.related-entry-content {*/
-    /*width: 100%;*/
-    /*!*min-width: 100%;*!*/
-    /*float: none;*/
-    /*}*/
-    /*.related-entry {*/
-    /*width: 100%;*/
-    /*height: 180px;*/
-    /*border-bottom: 1px solid silver;*/
-    /*}*/
-
+    /*スマホでのカエレバ・ヨメレバのデザイン*/
+    .shoplinkamazon, .shoplinkkindle, .shoplinkrakuten {
+        width: 100%;
+        margin-right: 0;
+    }
 }
 
 

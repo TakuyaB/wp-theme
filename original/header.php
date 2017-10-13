@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?php bloginfo( 'name' ); ?><?php wp_title(); ?></title>
     <!-- CSS,JavaScriptファイルの指定はここ -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 
     <!-- レスポンシブに必要な記述:Viewpoint -->

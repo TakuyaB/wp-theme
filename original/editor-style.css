@@ -23,6 +23,9 @@ span {
 .warning-box:before {
     content: "\f071";
     font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    left: 50%;
 }
 
 .warning-box {

@@ -20,6 +20,11 @@ span {
     margin-bottom: 3em;
 }
 
+.warning-box:before {
+    content: "\f071";
+    font-family: FontAwesome;
+}
+
 .warning-box {
     background-color: #FFDFEF;
     border: 1px solid silver;

@@ -9,7 +9,11 @@ Version: 2.01
 */
 
 
-
+.example {
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+}
 
 
 
@@ -1084,6 +1088,13 @@ span.bold {
     border: 1px solid silver;
     padding: 15px;
     margin-bottom: 3em;
+}
+.warning-box:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    content: "\f071";
+    position: relative;
+    left: 50%;
 }
 
 .green-box {

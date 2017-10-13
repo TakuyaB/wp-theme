@@ -1,9 +1,4 @@
 <?php
-function example_shortcode( $atts, $content = null) {
-    return '<div class="warning-box"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="margin: auto; text-align: center;"></i>' .$content . '</div>';
-}
-add_shortcode( 'example', 'example_shortcode' );
-
 add_editor_style('editor-style.css'); //ビジュアルエディタ用CSSを読み込む
 
 function custom_editor_settings( $initArray ){

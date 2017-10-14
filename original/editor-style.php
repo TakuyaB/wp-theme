@@ -20,6 +20,24 @@ function mce_buttons_table($buttons) {
 }
 add_filter( 'mce_buttons', 'mce_buttons_table' );
 
+//
+//
+//
+// ビジュアルエディタにHTMLを直挿入するためのボタンを追加
+function add_insert_html_button( $buttons ) {
+    $buttons[] = 'button_insert_html';
+    return $buttons;
+}
+add_filter( 'mce_buttons', 'add_insert_html_button' );
+
+function add_insert_html_button_plugin( $plugin_array ) {
+    $plugin_array['custom_button_script'] =  get_stylesheet_directory_uri() . "/editor-style.js";
+    return $plugin_array;
+}
+add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
+//
+//
+//
 
 //ビジュアルエディタにフォントサイズ変更ドロップダウンリストを追加
 //参考：https://nelog.jp/wordpress-visual-editor-font-size

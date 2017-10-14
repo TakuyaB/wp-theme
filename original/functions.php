@@ -1,6 +1,7 @@
 <?php
 require_once ('editor-style.php');
 require_once ('shortcode.php');
+
 //ウィジェット
 register_sidebar();
 

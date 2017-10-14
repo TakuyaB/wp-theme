@@ -1,11 +1,25 @@
 <?php
 add_editor_style('editor-style.css'); //ビジュアルエディタ用CSSを読み込む
-
 function custom_editor_settings( $initArray ){
 $initArray['body_class'] = 'editor-area'; //オリジナルのクラスを設定する
 return $initArray;
 }
 add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
+
+// ビジュアルエディタに表(テーブル)の機能を追加
+function mce_external_plugins_table($plugins) {
+    $plugins['table'] = '//cdn.tinymce.com/4/plugins/table/plugin.min.js';
+    return $plugins;
+}
+add_filter( 'mce_external_plugins', 'mce_external_plugins_table' );
+
+// ビジュアルエディタにテーブルを配置するボタンを追加
+function mce_buttons_table($buttons) {
+    $buttons[] = 'table';
+    return $buttons;
+}
+add_filter( 'mce_buttons', 'mce_buttons_table' );
+
 
 //ビジュアルエディタにフォントサイズ変更ドロップダウンリストを追加
 //参考：https://nelog.jp/wordpress-visual-editor-font-size

@@ -1,3 +1,5 @@
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css";
+
 span.bold {
     font-weight: bold;
 }
@@ -20,11 +22,30 @@ span {
     margin-bottom: 3em;
 }
 
+.information-box:before {
+    content: "\f05a\0020Information";
+    font-family: FontAwesome;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
 .warning-box {
+    color: #B74D4F;
     background-color: #FFDFEF;
     border: 1px solid silver;
     padding: 15px;
     margin-bottom: 3em;
+}
+
+.warning-box:before {
+    content: "\f071\0020注意";
+    font-family: FontAwesome;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
 }
 
 .green-box {

@@ -6,9 +6,6 @@ return $initArray;
 }
 add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
 
-//HTML挿入機能
-
-
 // ビジュアルエディタに表(テーブル)の機能を追加
 function mce_external_plugins_table($plugins) {
     $plugins['table'] = '//cdn.tinymce.com/4/plugins/table/plugin.min.js';

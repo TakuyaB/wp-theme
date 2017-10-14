@@ -26,6 +26,7 @@ Version: 2.01
 * {
     font-family: "Meiryo UI", sans-serif;
     font-size: 18px;
+    line-height: 1.8em;
     color: #444;
     margin: 0;
     padding: 0;
@@ -1100,7 +1101,7 @@ span.bold {
     margin-bottom: 3em;
 }
 
-.warning-box p {
+.warning-box p, .warning-box .bold {
     color: #B74D4F;
 }
 

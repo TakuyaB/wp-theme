@@ -672,6 +672,10 @@ ul#sns_btn li.sns_btnInner a.feedly {
     height: 500px;
 }
 
+.crayon-syntax {
+    margin-bottom: 3em;
+}
+
 
 /*----------------------------
  * subsec.under-related-posts(未編集）
@@ -1369,6 +1373,11 @@ span.bold {
     .shoplinkamazon, .shoplinkkindle, .shoplinkrakuten {
         width: 100%;
         margin-right: 0;
+    }
+
+    /*YouTubeなどiframe要素の幅*/
+    iframe {
+        width: 100%;
     }
 }
 

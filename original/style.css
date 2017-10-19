@@ -668,8 +668,10 @@ ul#sns_btn li.sns_btnInner a.feedly {
  * subsec.記事下Ads関連記事リンク
  -----------------------------*/
 .ad_under_post {
-    width: 100%;
-    height: 500px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100% !important;
+    height: auto;
 }
 
 .crayon-syntax {
@@ -754,6 +756,7 @@ ul#sns_btn li.sns_btnInner a.feedly {
 .single-pager {
     margin-top: 30px;
     width: 100%;
+    height: auto;
 }
 
 .single-pager .prev-link {
@@ -1081,7 +1084,13 @@ span.bold {
 .green-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #DFF0D8 0%) repeat scroll 0 0;}
 
 /* ボックスデザイン */
-.information-box {
+.normal-box {
+    border: 1px solid silver;
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.yellow-box, .information-box {
     background-color: #FCFFD8;
     border: 1px solid silver;
     padding: 15px;
@@ -1125,16 +1134,16 @@ span.bold {
     margin-bottom: 3em;
 }
 
-.information-box p, .warning-box p, .green-box p{
+.normal-box p, .yellow-box p, .information-box p, .warning-box p, .green-box p {
     padding: 0 !important;
     margin: 0 !important;
 }
 
-.information-box ul, .warning-box ul, .green-box ul,
-.information-box ol, .warning-box ol, .green-box ol {
+.normal-box ul, .yellow-box ul, .information-box ul, .warning-box ul, .green-box ul,
+.normal-box ol, .yellow-box ol, .information-box ol, .warning-box ol, .green-box ol {
     padding: 0 !important;
+    margin: 0 !important;
     margin-left: 30px !important;
-    margin-bottom: 0 !important;
 }
 
 

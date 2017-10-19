@@ -90,7 +90,21 @@ if ( !function_exists( 'initialize_tinymce_styles' ) ):
                 'classes' => 'green-marker'
             ),
             array(
+                'title' => '普通ボックス',
+                'block' => 'div',
+                'classes' => 'normal-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            ),
+            array(
                 'title' => '黄ボックス',
+                'block' => 'div',
+                'classes' => 'yellow-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            ),
+            array(
+                'title' => 'infoボックス',
                 'block' => 'div',
                 'classes' => 'information-box',
                 'wrapper' => true,

@@ -1,7 +1,10 @@
 <?php
 require_once ('editor-style.php');
 require_once ('shortcode.php');
+require_once ('rewrite-candidate.php');
 
+//臨時カスタムここまで
+//
 //ウィジェット
 register_sidebar();
 

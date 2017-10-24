@@ -147,4 +147,36 @@ if ( !function_exists( 'add_styles_to_tinymce_buttons' ) ):
     }
 endif;
 add_filter('mce_buttons_3','add_styles_to_tinymce_buttons');
+
+function count_title_characters() {?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            //in_selの文字数をカウントしてout_selに出力する
+            function count_characters(in_sel, out_sel) {
+
+                $(out_sel).html( $(in_sel).val().length );
+
+                if( $(in_sel).val().length >= '32' ) {
+                    $(out_sel).css("color","red");
+                } else {
+                    $(out_sel).css("color", "#666");
+                }
+            }
+
+            //ページ表示に表示エリアを出力
+            $('#titlewrap').after('<div style="position:absolute;top:-24px;right:0;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;">文字数<span class="wp-title-count" style="margin-left:5px;">0</span></div>');
+
+            //ページ表示時に数える
+            count_characters('#title', '.wp-title-count');
+
+            //入力フォーム変更時に数える
+            $('#title').bind("keydown keyup keypress change",function(){
+                count_characters('#title', '.wp-title-count');
+            });
+
+        });
+    </script><?php
+}
+add_action( 'admin_head-post-new.php', 'count_title_characters' );
+add_action( 'admin_head-post.php', 'count_title_characters' );
 ?>

@@ -1,8 +1,6 @@
 $(function() {
     $(".nav").css("display","none");
-    $("#nav-open").toggle(function() {
-        $(".nav").slideUp()
-    },function() {
-        $(".nav").slideDown()
+    $("#nav-open").on("click", function() {
+        $(".nav").slideToggle();
     });
 });

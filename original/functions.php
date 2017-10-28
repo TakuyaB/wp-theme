@@ -1,8 +1,18 @@
 <?php
-include(dirname(__FILE__).'/editor-style.php');
-//require_once ('editor-style.php');
+//include(dirname(__FILE__).'/editor-style.php');
+require_once ('editor-style.php');
 require_once ('shortcode.php');
 require_once ('rewrite-candidate.php');
+
+//スクリプトの一元管理ここから
+function add_files() {
+// WordPress本体のjquery.jsを読み込まない
+    wp_deregister_script('jquery');
+// jQueryの読み込み
+    wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false );
+}
+add_action( 'wp_enqueue_scripts', 'add_files' );
+//スクリプトの一元管理ここまで
 
 function my_scripts() {
     wp_enqueue_script( 'dropdown', get_bloginfo( 'stylesheet_directory') . '/dropdown.js', array(), false, true );

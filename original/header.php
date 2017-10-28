@@ -16,7 +16,6 @@
 
     <!--最小限のビューポート設定-->
     <meta name="viewport" content="width=device-width">
-<!--    --><?php //wp_deregister_script('jquery'); ?>
     <!-- WordPressのjQueryを読み込ませない --></p>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script></p>
     <script>
@@ -49,7 +48,7 @@
             <div id="header-inner" class="wrap">
                 <div class="header-logo">
                     <a href="<?php echo home_url(); ?>">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/logo.png">
+                        <img src="<?php bloginfo('template_directory'); ?>/images/logo.png">
                     </a>
                 </div>
                 <div class="header-nav">

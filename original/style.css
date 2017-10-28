@@ -19,6 +19,31 @@ Version: 2.01
     margin-top: -50px !important;
 }
 
+.topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 30px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    /*visibility: hidden;*/
+    /*visiblityがついているとjQueryのfadeinが効かない*/
+}
+
+.topBtn:hover {
+    opacity: 0.7;
+    color: white;
+    text-decoration: none;
+}
+
 /* -------------------------------------
  *
  * Reset HTML5
@@ -1402,6 +1427,10 @@ span.bold {
 
     #header-inner, .header-logo img{
         max-height: 70px;
+    }
+    #contents {
+        margin: 0;
+        border-top: 1px solid silver;
     }
 }
 

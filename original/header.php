@@ -16,22 +16,9 @@
 
     <!--最小限のビューポート設定-->
     <meta name="viewport" content="width=device-width">
-    <!-- WordPressのjQueryを読み込ませない --></p>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script></p>
-    <script>
-        $(function(){
-            $(".btn").toggle(
-                function(){
-                    $("nav").css("display","block");
-                    $(".btn").addClass("is-open");
-                },
-                function(){
-                    $("nav").css("display", "none");
-                    $(".btn").removeClass("is-open");
-                },
-            )
-        });
-    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!--    <script src="dropdown.js" type="text/javascript"></script>-->
     <!--アドセンス-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>

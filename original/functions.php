@@ -4,6 +4,11 @@ include(dirname(__FILE__).'/editor-style.php');
 require_once ('shortcode.php');
 require_once ('rewrite-candidate.php');
 
+function my_scripts() {
+    wp_enqueue_script( 'dropdown', get_bloginfo( 'stylesheet_directory') . '/dropdown.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts');
+
 //臨時カスタムここまで
 //
 //ウィジェット

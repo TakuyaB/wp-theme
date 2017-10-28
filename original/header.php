@@ -16,7 +16,23 @@
 
     <!--最小限のビューポート設定-->
     <meta name="viewport" content="width=device-width">
-    <?php wp_head(); ?>
+<!--    --><?php //wp_deregister_script('jquery'); ?>
+    <!-- WordPressのjQueryを読み込ませない --></p>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script></p>
+    <script>
+        $(function(){
+            $(".btn").toggle(
+                function(){
+                    $("nav").css("display","block");
+                    $(".btn").addClass("is-open");
+                },
+                function(){
+                    $("nav").css("display", "none");
+                    $(".btn").removeClass("is-open");
+                },
+            )
+        });
+    </script>
     <!--アドセンス-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
@@ -25,24 +41,31 @@
             enable_page_level_ads: true
         });
     </script>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
     <div id="container">
-    <div id="header">
-        <div class="main-title">
-            <h1 class="title-logo">
-                <a href="<?php echo home_url(); ?>">
-                    <img src="https://takuyab.com/wp-content/uploads/2017/08/A85srMjS.jpg">
-                </a>
-            </h1>
-        </div><!-- main-title ここまで -->
-        <div class="bgc">
-            <p id="nav-open"><a class="btn-open" href="#">MENU</a></p>
-            <?php wp_nav_menu(
-                array(
-                    'container' => false,
-                    'items_wrap' => '<nav class="nav"><ul id="menu">%3$s</ul></nav>'
-                )
-            ); ?>
-        </div><!-- bgc(nav-menu)ここまで -->
-    </div><!-- headerここまで-->
+        <header>
+            <div id="header-inner" class="wrap">
+                <div class="header-logo">
+                    <a href="<?php echo home_url(); ?>">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/logo.png">
+                    </a>
+                </div>
+                <div class="header-nav">
+                </div>
+                <!--スマホメニューここ-->
+                <div class="btn">
+                    <span><i></i></span>
+                </div>
+            </div>
+            <nav>
+                <?php wp_nav_menu(
+                    array(
+                        'container' => false,
+                        'items_wrap' => '<ul class="wrap">%3$s</ul>'
+                    )
+                ); ?>
+                <div class="clearfix"></div>
+            </nav>
+        </header>

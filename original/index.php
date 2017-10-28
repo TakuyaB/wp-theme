@@ -12,7 +12,7 @@
         })();
     </script>
 
-    <div id="contents">
+    <div id="contents" class="wrap">
     <div id="main">
         <?php get_template_part('breadcrumb'); ?>
         <?php if( is_category() ): ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div id="contents">
+    <div id="contents" class="wrap">
         <div id="main">
             <?php get_template_part('breadcrumb'); ?>
             <?php if(have_posts()): while(have_posts()): the_post(); ?><!--記事がある場合-->

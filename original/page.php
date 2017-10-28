@@ -1,9 +1,5 @@
 <?php get_header(); ?>
-<!--<div class="news">-->
-<!--    <h2>お知らせ</h2>-->
-<!--    <p>2017.03.07:現在、サイトデザインリニューアル中です！</p>-->
-<!--</div>-->
-<div id="contents">
+<div id="contents" class="wrap">
     <div id="main">
         <?php get_template_part('breadcrumb'); ?>
         <?php if(have_posts()): while(have_posts()): the_post(); ?>

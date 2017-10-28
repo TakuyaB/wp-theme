@@ -15,28 +15,98 @@ Version: 2.01
     padding: 5px;
 }
 
+.crayon-os-pc {
+    margin-top: -50px !important;
+}
+
+/* -------------------------------------
+ *
+ * Reset HTML5
+ *
+ ------------------------------------- */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block; }
+
+audio,
+canvas,
+video {
+    display: inline-block; }
+
+audio:not([controls]) {
+    display: none;
+    height: 0; }
+
+[hidden],
+template {
+    display: none;
+}
+
+/* -------------------------------------
+ *
+ * Reset CSS
+ *
+ ------------------------------------- */
+html{
+    margin-top:0 !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    color: #383838;
+    margin: 0;
+    line-height: 1.5;
+    word-break: normal;
+    background: whitesmoke;
+}
+
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn,
+em, img, ins, kbd, q, samp, small, strong, sub, sup, var,
+b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio, video, input, textarea{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Quicksand', "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    background: transparent;
+}
+
+img{
+    max-width: 100% !important;
+    height: auto;
+}
+
+iframe{
+    max-width: 100%;
+}
+
 /* -------------------------------------
  *
  * sec.general(共通設定の綺麗な書き方を調べておく！）
  *
  ------------------------------------- */
-
-* {
-    font-family: "Meiryo UI", sans-serif;
-    font-size: 18px;
-    line-height: 1.8em;
-    color: #444;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    background-color: whitesmoke;
-}
 
 p {
     font-size: 18px;
@@ -53,15 +123,6 @@ h2 {
 h3 {
     font-size: 24px;
 }
-
-h4{
-    margin-bottom: -54px;
-}
-
-.crayon-os-pc {
-    margin-top: -50px !important;
-}
-
 
 a {
     color: dodgerblue;
@@ -87,30 +148,26 @@ a:hover {
 }
 
 #contents {
-    width: 1200px;
-    margin: auto;
+    margin-top: 1px;
     overflow: hidden;
     background-color: white;
-    /*border-top:  1px solid silver;  !* contentsより上にお知らせなどの要素がある場合 *!*/
     border-right: 1px solid silver;
     border-left: 1px solid silver;
+    display: flex;
 }
 
-#header {
+header {
     width: 100%;
     background-color: white;
 }
 
 #main {
-    height: 100%;
-    width: 69%;
-    float: left;
+    max-width: 750px;
+    width: 100%;
 }
 
 #sidebar {
-    height: 100%;
     width: 30%;
-    float: right;
 }
 
 #footer {
@@ -121,135 +178,117 @@ a:hover {
     clear: both;
 }
 
-
+.wrap {
+    max-width: 1100px;
+    margin: auto;
+}
 
 /* -------------------------------------
  *
  * sec.header
  *
  ------------------------------------- */
-
-#header h1.title-logo{
-    background-color: white;
-    margin-top: 0;
-    padding-top: 20px;
-    margin-left: 50px;
-    margin-bottom: 0;
+#header-inner {
     height: 100px;
+    display: flex;
 }
 
-#header h1.title-logo a {
-    color: #333;
-    font-size: 28px;
-    text-decoration: none;
+.header-logo {
+    margin-right: auto;
+}
+.header-logo img{
+    max-height: 100px;
 }
 
-#header .title-logo a img {
-    height: 100px !important;
-    border: none;
+.header-nav {
+    padding: 15px;
+}
+.header-nav ul {
+    list-style-type: none;
+    display: flex;
 }
 
-#header h1.title-logo a:hover {
-    color: dodgerblue;
+.header-nav ul .li-first::after {
+    content: "|";
 }
-
-#header p.description {
-    font-size: 12px;
-    height: 25px;
-    margin: 0 0 20px 50px;
-}
-
 
 /*---------------
  * subsec.nav
+ （2017.10.26:flexに変更したプロパティを整理する。)
+
  ---------------*/
 
-.bgc {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    background-color: white;
+nav {
     border-top: 1px solid silver;
     border-bottom: 1px solid silver;
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
-nav {
-    width: 1200px;
-    margin: 0 auto 0;
-    padding: 0;
-    font-size: 98%;
-}
-
-
-ul#menu {
+nav ul {
     position: relative;
-    height: 40px;
-    margin: 0;
-    padding: 0;
+    height: auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+nav ul li {
+    position: relative;
+    flex: 1;
+    min-height: 30px;
+    border-right: 1px solid silver;
+    text-align: center;
     background-color: white;
-    text-align: center;
-}
-
-ul#menu li {
-    min-width: 100px;
-    float: left;
-    list-style-type: none;
 }
 
 
-ul#menu li a {
-    padding: 0 10px;
-    color: #333;
+.menu-item-home {
+    border-left: 1px solid silver;
+}
+
+nav ul li a {
     display: block;
-    font-size: 90%;
+    color: #333 !important;
+    text-decoration: none !important;
+    line-height: 30px;
+    }
+
+
+
+nav ul li a:hover {
     text-decoration: none;
-    text-align: center;
-    line-height: 40px;
-}
-
-/*ul#menu li a:before {*/
-    /*content: "▼";*/
-    /*color:#333;*/
-    /*font-size: 10px;*/
-/*}*/
-
-ul#menu li a:hover {
-    color: #333;
     background-color: whitesmoke;
 }
 
-ul#menu li ul {
-    display: none;
+nav ul ul {
+    display:none;
     position: absolute;
+    border-top: 1px solid silver;
+    top: 100%;
+    left: -2px;
 }
 
-ul#menu li ul li {
-    border-top: 1px solid silver;
-    float: none;
+nav ul li ul li {
+    border-bottom: 1px solid silver;
     background: white;
+    min-height: 30px;
     width: 220px;
     border-left: 1px solid silver;
     border-right: 1px solid silver;
 }
 
-ul#menu li ul li a {
-    font-size: 80%;
+nav ul li ul li a {
     text-align: left;
     padding-left: 10px;
+    display: block;
+    line-height: 30px;
 }
-ul#menu li:hover ul{
+nav ul li:hover ul{
     display: block;
     margin-left: 0;
 }
 
-#nav-open {
-    display: none;
-}
-
-.sub_last {
-    border-bottom: 1px solid silver;
-}
 /* -------------------------------------
  *
  * sec.footer
@@ -291,7 +330,6 @@ ul#menu li:hover ul{
     margin: 0;
     padding: 20px;
 }
-
 
 
 /*---------------------
@@ -479,7 +517,7 @@ a.page-numbers,
  -----------------------------*/
 
 .single-post img, .single-page img {
-    border: 1px solid silver;
+    /*border: 1px solid silver;*/
     max-width: 100%;
     height: auto;
 }
@@ -500,8 +538,8 @@ a.page-numbers,
  * subsec.list(記事内のul&ol)（未編集）
  -----------------------------*/
 
-.single-post ol, .single-post ul,
-.single-page ol, .single-page ul {
+#main .single-post ol, #main .single-post  ul,
+#main .single-page ol, #main .single-page  ul {
     margin-left: 30px;
     font-size: 18px;
     line-height: 1.8;
@@ -570,15 +608,16 @@ a.page-numbers,
 /*----------------------------
  * subsec.記事内SNSシェアボタン
  -----------------------------*/
-ul#sns_btn {
+
+#sns_btn {
     width:100%;
+    margin-left: 0 !important;
     float: left;
     clear: both;
     padding: 0;
-    margin: 0 0 10px 0;
 }
 
-ul#sns_btn:after {
+#sns_btn:after {
     content: ".";
     display: block;
     height: 0;
@@ -675,7 +714,6 @@ ul#sns_btn li.sns_btnInner a.feedly {
 .crayon-syntax {
     margin-bottom: 3em;
 }
-
 
 /*----------------------------
  * subsec.under-related-posts(未編集）
@@ -1204,68 +1242,30 @@ span.bold {
     clear:both;
 }
 
-
-
-
 /* -----------------------------------------------
  *
  * sec.Responsive-Design (Mac book Air ...etc)
  *
  -------------------------------------------------*/
-@media (min-width: 501px) and (max-width: 1400px) {
+/*@media (min-width: 501px) {*/
 
-    body, html {
-        width: 100%;
-        height: 100%;
-    }
-
-    #contents {
-        width: 90%;
-        min-width: 1000px;
-    }
-
-    .bgc {
-        max-width: 100%;
-        min-height: 40px !important;
-    }
-
-    nav {
-        margin-bottom: 40px !important;
-        max-width: 98%;
-        font-size: 10px;
-    }
-
-    ul#menu {
-        max-width: 100% !important;
-        margin: auto !important;
-    }
-
-    nav ul#menu li {
-        min-width: 100px;
-    }
-
-    nav li a {
-        color: #333 !important;
-    }
-
-    .dropLabel {
-        display: none;
-    }
-
-} /*レスポンシブ終了*/
+/*} !*レスポンシブ終了*!*/
 
 /* -----------------------------------------------
  *
  * sec.Responsive-Design (スマホ)
  *
  -------------------------------------------------*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
     .shoplinkamazon {
         width: 100% !important;
     }
 
     #header {
         width: 100% !important;
+    }
+    header nav {
+        display: none;
     }
 
     #container {
@@ -1275,6 +1275,7 @@ span.bold {
     #contents {
         width: 100% !important;
         min-width: 100%;
+        flex-direction: column;
     }
 
     #main, #sidebar {
@@ -1282,20 +1283,6 @@ span.bold {
         width: 100%;
     }
 
-    #header h1.title-logo {
-        width: 90%;
-        text-align: center;
-        margin:auto !important;
-        padding:0 !important;
-    }
-
-    #header h1.title-logo a {
-        font-size: 6.2vw !important;
-    }
-
-    #header p.description {
-        display: none;
-    }
 
     #main .single-post h2 {
         padding: 0 20px 0 20px;
@@ -1319,62 +1306,11 @@ span.bold {
     }
 
     /*スマホ用メニュー*/
-    ul#menu li:hover ul{
-        display: none;
-    }
-
-    ul#menu {
-        margin: 0;
-        padding: 0;
-        min-width: 100% !important;
-    }
 
     .wp_social_bookmarking_light {
         z-index: -1;
     }
 
-    ul#menu li {
-        position: relative;
-        z-index: 1000;
-        min-width: 100%;
-        float: none;
-        background-color: white;
-        border-bottom: 1px solid silver;
-        border-left: 1px solid silver;
-        border-right: 1px solid silver;
-    }
-
-    .bgc {
-        min-width: 100%;
-        min-height: 40px !important;
-    }
-
-    nav {
-        display: none;
-        width: 100%;
-        margin-bottom: 40px !important;
-        min-width: 100%;
-        font-size: 10px;
-    }
-
-    #menu a:hover{
-        background: #ccc;
-    }
-
-    #nav-open{
-        display: block;
-        position: relative;
-        width: 100%;
-    }
-
-    #nav-open a{
-        display: block;
-        padding: 12px 0 10px;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        background:#1D3557;
-    }
 
     /*スマホでのカエレバ・ヨメレバのデザイン*/
     .shoplinkamazon, .shoplinkkindle, .shoplinkrakuten {
@@ -1391,7 +1327,86 @@ span.bold {
         width: 85%;
         margin: 10px;
     }
+
+
+
+    /*スマホメニューの作成用CSSここ仮*/
+    .btn {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 14px;
+        top: 20px;
+        background-color: #333;
+    }
+
+    .btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 3px;
+        background: #fff;
+        transition: background 0.5s;
+        position: relative;
+        left: 5px;
+        top: 14px;
+    }
+    .btn i::before,
+    .btn i::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 3px;
+        background: #fff;
+        position: absolute;
+        transform: rotate(0);
+        transition: all 0.3s !important;
+    }
+
+    .btn i::before {
+        transform: translateY(8px);
+    }
+    .btn i::after {
+        transform: translateY(-8px);
+    }
+    .is-open i{
+        background: #333;
+    }
+    .is-open i::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+    .is-open i::before {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    nav {
+        border-bottom: none;
+    }
+    nav ul {
+        display: block;
+    }
+
+    nav ul ul {
+        display: none !important;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        width: 50%;
+        height: auto;
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
+
+    #header-inner, .header-logo img{
+        max-height: 70px;
+    }
 }
+
+
+
 
 
 

@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-
-    <div id="contents">
+    <div id="contents" class="wrap">
         <div id="main">
             <?php get_template_part('breadcrumb'); ?>
             <?php if(have_posts()): while(have_posts()): the_post(); ?><!--記事がある場合-->
@@ -33,17 +32,17 @@
                     </div>
                 </div>
                 <?php get_template_part('sns-btn'); ?>
-                <div class="ad_under_post">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-format="autorelaxed"
-                         data-ad-client="ca-pub-8190426600607976"
-                         data-ad-slot="9766097742"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+<!--                <div class="ad_under_post">-->
+<!--                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+<!--                    <ins class="adsbygoogle"-->
+<!--                         style="display:block"-->
+<!--                         data-ad-format="autorelaxed"-->
+<!--                         data-ad-client="ca-pub-8190426600607976"-->
+<!--                         data-ad-slot="9766097742"></ins>-->
+<!--                    <script>-->
+<!--                        (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--                    </script>-->
+<!--                </div>-->
                 <!-- single-pager -->
                 <div class="single-pager">
                     <div class="prev-link">

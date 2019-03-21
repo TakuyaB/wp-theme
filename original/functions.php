@@ -1,5 +1,29 @@
 <?php
+//include(dirname(__FILE__).'/editor-style.php');
 require_once ('editor-style.php');
+require_once ('shortcode.php');
+require_once ('rewrite-candidate.php');
+
+//スクリプトの一元管理ここから
+if(!is_admin()){
+    function register_script(){
+        wp_register_script('dropdown', get_bloginfo('template_directory').'/dropdown.js');
+    }
+    function add_script(){
+        register_script();
+        wp_enqueue_script('dropdown');
+    }
+    add_action('wp_print_scripts','add_script',10);
+}
+//スクリプトの一元管理ここまで
+
+function my_scripts() {
+    wp_enqueue_script( 'dropdown', get_bloginfo( 'stylesheet_directory') . '/dropdown.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts');
+
+//臨時カスタムここまで
+//
 //ウィジェット
 register_sidebar();
 
@@ -109,28 +133,73 @@ add_filter('walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4);
 function description_in_nav_menu($item_output, $item){
     return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br /><span>{$item->attr_title}</span><", $item_output);
 }
+//アクセス数の取得
+function get_post_views( $postID ) {
+    $count_key = 'post_views_count';
+    $count     = get_post_meta( $postID, $count_key, true );
+    if ( $count == '' ) {
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '0' );
 
-function count_title_characters() {?>
-    <script type="text/javascript">
-        jQuery(document).ready(function($){
-            //in_selの文字数をカウントしてout_selに出力する
-            function count_characters(in_sel, out_sel) {
-                $(out_sel).html( $(in_sel).val().length );
-            }
+        return "0 ";
+    }
 
-            //ページ表示に表示エリアを出力
-            $('#titlewrap').after('<div style="position:absolute;top:-24px;right:0;color:#666;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;">文字数<span class="wp-title-count" style="margin-left:5px;">0</span></div>');
-
-            //ページ表示時に数える
-            count_characters('#title', '.wp-title-count');
-
-            //入力フォーム変更時に数える
-            $('#title').bind("keydown keyup keypress change",function(){
-                count_characters('#title', '.wp-title-count');
-            });
-
-        });
-    </script><?php
+    return $count . '';
 }
-add_action( 'admin_head-post-new.php', 'count_title_characters' );
-add_action( 'admin_head-post.php', 'count_title_characters' );
+
+//アクセス数の保存
+function set_post_views( $postID ) {
+    $count_key = 'post_views_count';
+    $count     = get_post_meta( $postID, $count_key, true );
+    if ( $count == '' ) {
+        $count = 0;
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '0' );
+    } else {
+        $count ++;
+        update_post_meta( $postID, $count_key, $count );
+    }
+}
+function isBot() {
+    $bot_list = array (
+        'Googlebot',
+        'Yahoo! Slurp',
+        'Mediapartners-Google',
+        'msnbot',
+        'bingbot',
+        'MJ12bot',
+        'Ezooms',
+        'pirst; MSIE 8.0;',
+        'Google Web Preview',
+        'ia_archiver',
+        'Sogou web spider',
+        'Googlebot-Mobile',
+        'AhrefsBot',
+        'YandexBot',
+        'Purebot',
+        'Baiduspider',
+        'UnwindFetchor',
+        'TweetmemeBot',
+        'MetaURI',
+        'PaperLiBot',
+        'Showyoubot',
+        'JS-Kit',
+        'PostRank',
+        'Crowsnest',
+        'PycURL',
+        'bitlybot',
+        'Hatena',
+        'facebookexternalhit',
+        'NINJA bot',
+        'YahooCacheSystem',
+    );
+
+    $is_bot = false;
+    foreach ($bot_list as $bot) {
+        if (stripos($_SERVER['HTTP_USER_AGENT'], $bot) !== false) {
+            $is_bot = true;
+            break;
+        }
+    }
+    return $is_bot;
+}

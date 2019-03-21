@@ -1,3 +1,5 @@
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css";
+
 span.bold {
     font-weight: bold;
 }
@@ -6,6 +8,8 @@ span {
     line-height: 1.5em !important;
 }
 
+
+
 /*フォント：色付きマーカー*/
 .red-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;}
 .blue-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;}
@@ -13,18 +17,47 @@ span {
 .green-marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #DFF0D8 0%) repeat scroll 0 0;}
 
 /* ボックスデザイン */
-.information-box {
+.normal-box {
+    border: 1px solid silver;
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.yellow-box, .information-box {
     background-color: #FCFFD8;
     border: 1px solid silver;
     padding: 15px;
     margin-bottom: 3em;
 }
 
+.information-box:before {
+    content: "\f05a\0020Information";
+    font-family: FontAwesome;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
 .warning-box {
+    color: #B74D4F;
     background-color: #FFDFEF;
     border: 1px solid silver;
     padding: 15px;
     margin-bottom: 3em;
+}
+
+.warning-box p, .warning-box .bold {
+    color: #B74D4F;
+}
+
+.warning-box:before {
+    content: "\f071\0020注意";
+    font-family: FontAwesome;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
 }
 
 .green-box {
@@ -34,13 +67,13 @@ span {
     margin-bottom: 3em;
 }
 
-.information-box p, .warning-box p, .green-box p {
+.normal-box p, .yellow-box p, .information-box p, .warning-box p, .green-box p {
     padding: 0 !important;
     margin: 0 !important;
 }
 
-.information-box ul, .warning-box ul, .green-box ul,
-.information-box ol, .warning-box ol, .green-box ol {
+.normal-box ul, .yellow-box ul, .information-box ul, .warning-box ul, .green-box ul,
+.normal-box ol, .yellow-box ol, .information-box ol, .warning-box ol, .green-box ol {
     padding: 0 !important;
     margin: 0 !important;
     margin-left: 30px !important;
@@ -78,26 +111,39 @@ body.editor-area h2 {
     line-height: 2;
 }
 
-.editor-area blockquote {
-    background-color: #ddd;
-    padding: 1em 1em 1em 1em;
-    margin-bottom:3em;
-    position: relative;
-    border-left: 3px solid #333;
+
+.editor-area ul,.editor-area ol {
+    margin-bottom: 54px;
 }
 
+.editor-area blockquote p {
+    margin-bottom: 1em !important;
+}
+.editor-area blockquote {
+    padding: 1em 1em 1em 3em;
+    position: relative;
+    border: 2px solid #666;
+    margin-bottom: 3em;
+}
 
 .editor-area blockquote:before {
     content:"“";
-    font-size: 600%;
+    font-size: 400%;
     line-height: 1em;
     font-family: "MS Pゴシック", sans-serif;
     color: #999;
     position:absolute;
-    left: 0;
-    top: 0;
+    left: 5px;
+    top: 5px;
 }
 
-.editor-area ul,.editor-area ol {
-    margin-bottom: 54px;
+.editor-area blockquote:after {
+    content:"”";
+    font-size: 400%;
+    line-height: 0;
+    font-family: "MS Pゴシック", sans-serif;
+    color: #999;
+    position:absolute;
+    right: 5px;
+    bottom: 5px;
 }

@@ -1,11 +1,43 @@
 <?php
 add_editor_style('editor-style.css'); //ビジュアルエディタ用CSSを読み込む
-
 function custom_editor_settings( $initArray ){
 $initArray['body_class'] = 'editor-area'; //オリジナルのクラスを設定する
 return $initArray;
 }
 add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
+
+// ビジュアルエディタに表(テーブル)の機能を追加
+function mce_external_plugins_table($plugins) {
+    $plugins['table'] = '//cdn.tinymce.com/4/plugins/table/plugin.min.js';
+    return $plugins;
+}
+add_filter( 'mce_external_plugins', 'mce_external_plugins_table' );
+
+// ビジュアルエディタにテーブルを配置するボタンを追加
+function mce_buttons_table($buttons) {
+    $buttons[] = 'table';
+    return $buttons;
+}
+add_filter( 'mce_buttons', 'mce_buttons_table' );
+
+//
+//
+//
+// ビジュアルエディタにHTMLを直挿入するためのボタンを追加
+function add_insert_html_button( $buttons ) {
+    $buttons[] = 'button_insert_html';
+    return $buttons;
+}
+add_filter( 'mce_buttons', 'add_insert_html_button' );
+
+function add_insert_html_button_plugin( $plugin_array ) {
+    $plugin_array['custom_button_script'] =  get_stylesheet_directory_uri() . "/editor-style.js";
+    return $plugin_array;
+}
+add_filter( 'mce_external_plugins', 'add_insert_html_button_plugin' );
+//
+//
+//
 
 //ビジュアルエディタにフォントサイズ変更ドロップダウンリストを追加
 //参考：https://nelog.jp/wordpress-visual-editor-font-size
@@ -58,7 +90,21 @@ if ( !function_exists( 'initialize_tinymce_styles' ) ):
                 'classes' => 'green-marker'
             ),
             array(
+                'title' => '普通ボックス',
+                'block' => 'div',
+                'classes' => 'normal-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            ),
+            array(
                 'title' => '黄ボックス',
+                'block' => 'div',
+                'classes' => 'yellow-box',
+                'wrapper' => true,
+                'merge_siblings' => false
+            ),
+            array(
+                'title' => 'infoボックス',
                 'block' => 'div',
                 'classes' => 'information-box',
                 'wrapper' => true,
@@ -101,4 +147,36 @@ if ( !function_exists( 'add_styles_to_tinymce_buttons' ) ):
     }
 endif;
 add_filter('mce_buttons_3','add_styles_to_tinymce_buttons');
+
+function count_title_characters() {?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            //in_selの文字数をカウントしてout_selに出力する
+            function count_characters(in_sel, out_sel) {
+
+                $(out_sel).html( $(in_sel).val().length );
+
+                if( $(in_sel).val().length >= '32' ) {
+                    $(out_sel).css("color","red");
+                } else {
+                    $(out_sel).css("color", "#666");
+                }
+            }
+
+            //ページ表示に表示エリアを出力
+            $('#titlewrap').after('<div style="position:absolute;top:-24px;right:0;background-color:#f7f7f7;padding:1px 2px;border-radius:5px;border:1px solid #ccc;">文字数<span class="wp-title-count" style="margin-left:5px;">0</span></div>');
+
+            //ページ表示時に数える
+            count_characters('#title', '.wp-title-count');
+
+            //入力フォーム変更時に数える
+            $('#title').bind("keydown keyup keypress change",function(){
+                count_characters('#title', '.wp-title-count');
+            });
+
+        });
+    </script><?php
+}
+add_action( 'admin_head-post-new.php', 'count_title_characters' );
+add_action( 'admin_head-post.php', 'count_title_characters' );
 ?>

@@ -20,4 +20,7 @@
                             <i class="fa fa-folder-open"></i>
         <?php the_category( ', ' ); ?>
                         </span>
+    <span class="display_views"><?php echo get_post_views( get_the_ID() ).'Views'; ?>
+        <?php if( is_single() && !is_user_logged_in() && !isBot() ) { set_post_views( get_the_ID() ); } ?>
+    </span>
 </div><!-- post-infoここまで -->
